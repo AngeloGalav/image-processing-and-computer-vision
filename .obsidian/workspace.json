@@ -1,0 +1,183 @@
+{
+  "main": {
+    "id": "a120730282867c5e",
+    "type": "split",
+    "children": [
+      {
+        "id": "a7bc689412b396b3",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "14b4221234d8760b",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "images/differences_on_the_average_2.png"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "bdd0b59e47043805",
+    "type": "split",
+    "children": [
+      {
+        "id": "9ac21f6971c04dec",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "41da8e61647e3eeb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "bf3a7038bbbd23be",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "Screenshot",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ed90fb8e69b5158d",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "36bb32513fa1ecb8",
+    "type": "split",
+    "children": [
+      {
+        "id": "6abd6bcf8d5b730c",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "2a6eef9f5da5173c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "images/differences_on_the_average_2.png",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "4c85a5c6086b3eb4",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "images/differences_on_the_average_2.png",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "964c1cb9788a1801",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "4d027fdfecd6c3e9",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "images/differences_on_the_average_2.png"
+              }
+            }
+          },
+          {
+            "id": "3351067355c515b5",
+            "type": "leaf",
+            "state": {
+              "type": "git-view",
+              "state": {}
+            }
+          }
+        ],
+        "currentTab": 4
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "left-ribbon": {
+    "hiddenItems": {
+      "switcher:Open quick switcher": false,
+      "graph:Open graph view": false,
+      "canvas:Create new canvas": false,
+      "daily-notes:Open today's daily note": false,
+      "templates:Insert template": false,
+      "command-palette:Open command palette": false
+    }
+  },
+  "active": "41da8e61647e3eeb",
+  "lastOpenFiles": [
+    "2023-03-13 (x).md",
+    "2023-03-06 (x).md",
+    "images/discrete_conv.png",
+    "images/differences_on_the_averages.png",
+    "images/edge_detection_by_gradient_thresh.png",
+    "images/differences_on_the_average_2.png",
+    "2023-03-20 (x).md",
+    "images/formulas_1.png",
+    "images/formulas_5.png",
+    "images/formulas_4.png",
+    "images/formulas_3.png",
+    "images/formulas_2.png",
+    "2023-04-03 (x).md",
+    "2023-04-04 (x).md",
+    "2023-03-27 (x).md",
+    "2023-03-09 (x).md",
+    "images/canonical_orientation.png",
+    "2023-02-27 - Solving correspondences.md",
+    "2023-03-02 - Lenses + Camera Sensors.md",
+    "2023-02-23 - Introduction to images and stereo vision.md",
+    "log_examples.png~",
+    "README.md",
+    "Lab",
+    "Untitled.md",
+    "images"
+  ]
+}
