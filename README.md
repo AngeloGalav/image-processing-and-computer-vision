@@ -3,5 +3,5 @@
 Work in progress...
 
 ## TODOs
-[ ] - complete the lectures TODOs
-[ ] - finish lab2
+- [ ] complete the lectures TODOs
+- [ ] finish lab2
