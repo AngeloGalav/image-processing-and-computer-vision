@@ -11,9 +11,23 @@
             "id": "14b4221234d8760b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "images/differences_on_the_average_2.png"
+                "file": "README.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "d798ce74ef9ae3ac",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023-04-27 - (x).md",
+                "mode": "source",
+                "source": false
               }
             }
           }
@@ -62,6 +76,14 @@
               "type": "starred",
               "state": {}
             }
+          },
+          {
+            "id": "33352616138dff79",
+            "type": "leaf",
+            "state": {
+              "type": "bookmarks",
+              "state": {}
+            }
           }
         ]
       }
@@ -83,7 +105,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "images/differences_on_the_average_2.png",
+                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -100,7 +122,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "images/differences_on_the_average_2.png",
+                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -123,7 +145,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "images/differences_on_the_average_2.png"
+                "file": "README.md"
               }
             }
           },
@@ -152,28 +174,34 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "41da8e61647e3eeb",
+  "active": "14b4221234d8760b",
   "lastOpenFiles": [
-    "Lab/LabSession2.ipynb",
-    "2023-03-13 (x).md",
-    "2023-03-06 (x).md",
-    "images/discrete_conv.png",
-    "images/differences_on_the_averages.png",
-    "images/edge_detection_by_gradient_thresh.png",
-    "images/differences_on_the_average_2.png",
-    "2023-03-20 (x).md",
-    "images/formulas_1.png",
-    "images/formulas_5.png",
-    "images/formulas_4.png",
-    "images/formulas_3.png",
-    "images/formulas_2.png",
+    "images/refinement_H.png",
+    "images/backward_mapping.png",
+    "2023-05-04.md",
+    "images/bilinear_interpolation.png",
+    "images/forward_mapping_2.png",
+    "images/forward_mapping.png",
+    "images/warping_4.png",
+    "images/warping_3.png",
+    "images/warping_2.png",
+    "images/warping.png",
+    "images/refinemnet.png",
+    "images/formula_cazzo.png",
+    "2023-04-27 - (x).md",
+    "2023-04-20 - (x) 0.md",
+    "equations.png~",
+    "2023-04-17 - (x) Instance Detection.md",
     "2023-04-03 (x).md",
-    "2023-04-04 (x).md",
-    "2023-03-27 (x).md",
+    "2023-03-20 (x).md",
+    "2023-03-27 (x) 0.md",
+    "2023-03-13 (x).md",
     "2023-03-09 (x).md",
-    "images/canonical_orientation.png",
-    "2023-02-27 - Solving correspondences.md",
+    "2023-03-06 (x).md",
+    "2023-04-04 (x).md",
     "2023-03-02 - Lenses + Camera Sensors.md",
+    "Lab/LabSession2.ipynb",
+    "2023-02-27 - Solving correspondences.md",
     "2023-02-23 - Introduction to images and stereo vision.md",
     "log_examples.png~",
     "README.md",
