@@ -4,30 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "a7bc689412b396b3",
+        "id": "cb86fada90e29923",
         "type": "tabs",
         "children": [
           {
-            "id": "14b4221234d8760b",
+            "id": "1b14ddb874db890c",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "diff-view",
               "state": {
-                "file": "README.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "d798ce74ef9ae3ac",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2023-04-27 - (x).md",
-                "mode": "source",
-                "source": false
+                "file": "2023-05-08 - (x) 0.md",
+                "staged": false
               }
             }
           }
@@ -105,7 +92,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "README.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -122,7 +108,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "README.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -144,9 +129,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "README.md"
-              }
+              "state": {}
             }
           },
           {
@@ -174,39 +157,83 @@
       "command-palette:Open command palette": false
     }
   },
-  "active": "14b4221234d8760b",
+  "floating": {
+    "id": "a9f73f25ece826fa",
+    "type": "floating",
+    "children": [
+      {
+        "id": "710e435453056d3e",
+        "type": "window",
+        "children": [
+          {
+            "id": "5a84af63e0a9b190",
+            "type": "tabs",
+            "children": [
+              {
+                "id": "108f9ebaa04cf523",
+                "type": "leaf",
+                "state": {
+                  "type": "markdown",
+                  "state": {
+                    "file": "Digests/P1L2 - SPATIAL FILTERING.md",
+                    "mode": "source",
+                    "source": false
+                  }
+                }
+              }
+            ]
+          }
+        ],
+        "direction": "vertical",
+        "x": 910,
+        "y": 518,
+        "width": 1010,
+        "height": 512,
+        "maximize": false,
+        "zoom": -0.5
+      }
+    ]
+  },
+  "active": "1b14ddb874db890c",
   "lastOpenFiles": [
-    "images/refinement_H.png",
-    "images/backward_mapping.png",
-    "2023-05-04.md",
-    "images/bilinear_interpolation.png",
-    "images/forward_mapping_2.png",
-    "images/forward_mapping.png",
-    "images/warping_4.png",
-    "images/warping_3.png",
-    "images/warping_2.png",
-    "images/warping.png",
-    "images/refinemnet.png",
-    "images/formula_cazzo.png",
-    "2023-04-27 - (x).md",
+    "2023-03-06 (x).md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "2023-03-02 - Lenses 2, Camera Sensors.md",
+    "2023-02-27 - Solving correspondences, Lenses.md",
+    "2023-02-23 - Introduction to images and stereo vision.md",
+    "Digests/P1L1 - IMAGES.md",
     "2023-04-20 - (x) 0.md",
-    "equations.png~",
     "2023-04-17 - (x) Instance Detection.md",
-    "2023-04-03 (x).md",
     "2023-03-20 (x).md",
+    "2023-04-03 (x).md",
     "2023-03-27 (x) 0.md",
     "2023-03-13 (x).md",
     "2023-03-09 (x).md",
-    "2023-03-06 (x).md",
-    "2023-04-04 (x).md",
-    "2023-03-02 - Lenses + Camera Sensors.md",
-    "Lab/LabSession2.ipynb",
-    "2023-02-27 - Solving correspondences.md",
-    "2023-02-23 - Introduction to images and stereo vision.md",
-    "log_examples.png~",
+    "Images/circles_of_confusion.png",
+    "2023-02-20 - Quick Intro.md",
+    "Digests",
+    "2023-05-22 - (x).md",
+    "Screenshot_20230518_125211.png",
+    "Screenshot_20230522_121254.png",
+    "Screenshot_20230518_125629.png",
+    "Screenshot_20230518_125435.png",
+    "Images/visual_words.png",
+    "Images/real_dnn.png",
+    "Images/cnn_flatten.png",
+    "Images/max_pooling.png",
+    "Images/convolutional_layer.png",
+    "2023-05-18 - (x) BOW.md",
+    "2023-04-27 - (x).md",
+    "2023-05-15 - (x) 0.md",
+    "2023-05-08 - (x) 0.md",
+    "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
     "README.md",
+    "equations.png~",
+    "2023-04-04 (x).md",
+    "Lab/LabSession2.ipynb",
+    "log_examples.png~",
     "Lab",
     "Untitled.md",
-    "images"
+    "Images"
   ]
 }
