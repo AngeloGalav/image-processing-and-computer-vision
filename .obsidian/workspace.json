@@ -11,10 +11,21 @@
             "id": "1b14ddb874db890c",
             "type": "leaf",
             "state": {
-              "type": "diff-view",
+              "type": "markdown",
               "state": {
-                "file": "2023-05-08 - (x) 0.md",
-                "staged": false
+                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "ec42a66c2e1ac3ac",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/batch_norm_alternatives.png"
               }
             }
           }
@@ -47,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "Screenshot",
+                "query": "harris",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -92,6 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
+                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -108,6 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
+                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -129,7 +142,9 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {}
+              "state": {
+                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md"
+              }
             }
           },
           {
@@ -185,10 +200,10 @@
           }
         ],
         "direction": "vertical",
-        "x": 910,
-        "y": 518,
-        "width": 1010,
-        "height": 512,
+        "x": 970,
+        "y": 534,
+        "width": 950,
+        "height": 496,
         "maximize": false,
         "zoom": -0.5
       }
@@ -196,44 +211,46 @@
   },
   "active": "1b14ddb874db890c",
   "lastOpenFiles": [
-    "2023-03-06 (x).md",
+    "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
+    "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
+    "2023-05-22 - (x).md",
+    "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
+    "Images/batch_norm_alternatives.png",
     "Digests/P1L2 - SPATIAL FILTERING.md",
+    "Images/tan_dist.png",
+    "Images/camera_calib_noamb.png",
+    "Images/list_of_stuff.png",
+    "Images/radial_barrel_distortion.png",
+    "Images/lens_distortion_coords.png",
+    "Images/lens_disto.png",
+    "Images/useful_factorization.png",
+    "Images/ext_parms_matrix.png",
+    "Images/intrisic_parameter_matrix.png",
+    "Digests/P2L1.md",
+    "Digests/P2L2.md",
+    "2023-05-29 - (x).md",
+    "2023-04-17 - (x) Instance Detection.md",
+    "2023-05-15 - (x) 0.md",
+    "2023-05-08 - (x) 0.md",
+    "2023-03-06 (x).md",
+    "2023-03-09 (x).md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",
     "2023-02-27 - Solving correspondences, Lenses.md",
     "2023-02-23 - Introduction to images and stereo vision.md",
     "Digests/P1L1 - IMAGES.md",
-    "2023-04-20 - (x) 0.md",
-    "2023-04-17 - (x) Instance Detection.md",
     "2023-03-20 (x).md",
     "2023-04-03 (x).md",
     "2023-03-27 (x) 0.md",
     "2023-03-13 (x).md",
-    "2023-03-09 (x).md",
-    "Images/circles_of_confusion.png",
     "2023-02-20 - Quick Intro.md",
     "Digests",
-    "2023-05-22 - (x).md",
-    "Screenshot_20230518_125211.png",
-    "Screenshot_20230522_121254.png",
-    "Screenshot_20230518_125629.png",
-    "Screenshot_20230518_125435.png",
-    "Images/visual_words.png",
-    "Images/real_dnn.png",
-    "Images/cnn_flatten.png",
-    "Images/max_pooling.png",
-    "Images/convolutional_layer.png",
     "2023-05-18 - (x) BOW.md",
-    "2023-04-27 - (x).md",
-    "2023-05-15 - (x) 0.md",
-    "2023-05-08 - (x) 0.md",
-    "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
     "README.md",
     "equations.png~",
     "2023-04-04 (x).md",
     "Lab/LabSession2.ipynb",
     "log_examples.png~",
     "Lab",
-    "Untitled.md",
     "Images"
   ]
 }

@@ -1,28 +1,35 @@
-## What error should we minimize?
+## Zhang Part 3 -> Refine each $𝐻_𝑖$ by minimizing the reprojection error
+### What error should we minimize?
 ![[optmiizi_h.png]]
-When finding the h, we wanted to find an H that optimizing on top of $\tilde w_j$. 
-We are not getting a perfect H, since we are finding it in LSQ sense and we're neglecting the lens distortion. 
+When finding the homography $H$, we wanted to find an H that optimizing on top of $\tilde w_j$. 
+We are not getting a perfect H, since we are finding it in LSQ sense and we're neglecting the lens distortion. And most definetly, we are not going to find it using a simple linear model. 
+Our $\tilde w_j$ will map something close to $m_j$, but it is not quite the exact value yet.
 
-Our $\tilde w_j$ will map something on $m_j$, but it is not quite the exact value yet.
-There's a problem though:
-- $H_i$ is a 3x3 matrix
-- $w_j$ (without the tilde means that it is not in the projection space, but it's in pixel coordinates), so there are
+There's another problem though:
+- $H_i$ is a 3x3 matrix (like we saw). 
+- $w_j$ (with no tilde) has 4 coordinates [x, y, z, 1] (with the tilde, it has 3 coordinates)
 
-What I get is a 2x1 vector, since I divide by a 3rd coordinate ($h_3$) each row of the matrix. This is because we're trying to project the image into the Euclidean space. 
-We can try to improve H by making this distance (between $H_iw_j$ and $m_j$) as short as possible -> We want to minize $||m_j - H_iw_j||$. 
-By solving the linear system of equation, we are trying to minize the algebraic error, while when we are minimizing $||m_j - H_iw_j||$ we are minimizing the geometric error.
+But, the notation is done like this in order to make it clear that we are in the pixel space: it's a multiplication resulting in a 2x1 vector, since I divide by a 3rd coordinate ($h_3$) each row of the matrix (in order to escape from the perspective space). 
+- This is because we're trying to project the image into the _Euclidean space_. 
 
-To minimize the geometric error, we are using a similar _iterative_ method to SGD. 
-Why are we doing the 2-step error minimization?
-This is because iterative methods are very sensistive to parameter optimizations (i.e. the first parameter of the iteration) etc... 
+We can try to improve $H$ by making this distance (between $H_iw_j$ and $m_j$) as short as possible -> We want to minimize $||m_j - H_iw_j||$. 
+- By solving [[2023-04-27 - PPM, handling lenses, intro to camera calibration#Estimating $𝐻_𝑖$ (DLT algorithm)|the linear system of equation]], we are trying to minimize the _algebraic error_, while when we are minimizing $||m_j - H_iw_j||$ we are minimizing the _geometric error_.
+
+##### In short...
+Given the initial guess for $𝑯_𝒊$ , we can refine it by a non-linear minimization problem:
 ![[refinement_H.png]]
-[slide 19 qui]
+which can be solved for by using an iterative algorithm, like the Levenberg-Marquardt algorithm (similar to SGD). 
+This additional optimization step corresponds to the minimization of the reprojection error (typically referred to as geometric error) measured for each of the 3D corners of the pattern by comparing the _pixel coordinates predicted by the estimated homography_ to the _pixel coordinates_ of the corresponding corner extracted in the image ($m_j$). 
 
+The error minimized to estimate the initial guess when solving the linear system is instead referred to as _algebraic error_ or distance. Solutions based on minimization of the algebraic error may not be aligned with our intuition, yet there exist a unique solution, which is cheap to compute. Hence, they are a good starting point for a geometric, non-linear minimization, which effectively minimize the distance we care about.
 
-## Estimation of the intrinsic parameters - Zhang's Method 4 
-- Get an initial guess for $𝐴$ given the homographies $𝐻_i$.
+>[!approfondimento]
+>Why are we doing the 2-step error minimization (algebraic + geometric) instead of just using the geomtric minization?
+> This is because iterative methods are very sensistive to initial parameter values (i.e. the first parameter of the iteration) etc...
+> - The algebraic error serves to find a good initial guess essentially.  
 
-Up to now. if we got n images we have computed an homography between the world patter and the patter between the $i$ images. Why can't we stop right now?
+## Zhang's Method 4 -> Estimation of the intrinsic parameters (initial guess of A)
+Up to now, if we got $n$ images we have computed an homography between the world pattern and the pattern between the $i$ images. Why can't we stop right now?
 
 With calibration, we want to estimate _perspective projection matrix_ and _the parameters_ (intrisinc and extrinsic).
 - The $H$ (homography) projection matrix is very close to the perspective projection matrix, we just need another to find $P$ from $H$.
@@ -33,25 +40,26 @@ We can establish the following relations between them and the extrinsic and intr
 ![[ext_intr.png]]
 $H_i$ we get from the images, which gives a 3x3 matrix H. 
 But why is there a $k$ parameters (which is not the parameter k for lens distortion)? 
-- PPM is found always at a scale, since we have 3 images in the same projecting spaces. 
-- I have to estimate $k$, which can be seen as a _proportional factor_.
+- I have to estimate $k$, which can be seen as a _proportional factor_. This is because, as always, of the relation of equivalence in the proportional space. 
 
-In the final part of this equation (the one with the 2 equivalences), I know only the $h_{ik}$, the other parameters are unknown. 
-They are column vectors of a rotation matrix, so they are orthogonal, so -> 
+In the final part of this equation (the one with the 2 equivalences), I know only the $h_{ik}$, the other parameters are unknown. But...
+$r_{i1}, r_{i2}$ are column vectors of a _rotation matrix_, so they are _orthogonal_, so -> 
 - the $k$ is not important then!
 - And...
 Since the column vectors of each $𝑹_𝒊$ are orthonormal, we get the following constraints:
 ![[ok1.png]]
-I only need to find $A^TA^{-1}$ (the other $h$s are known). 
-Also, thier norm is 1, so:
+Oh great, now I only need to find $A^TA^{-1}$ (since the other $h$s are known) 😀.
+
+Also, since the column vectors of $R$ are orthonormal, _their norm is $k$_, so:
 ![[norm_conseq.png]]
 I can equate the 2 parts of the linear system. 
+
 By stacking these two constraints for each image, we get a homogeneous system of equations which can be solved again by SVD if $𝑛 ≥ 3$ images are collected (_6 unknowns_ since $𝑨^{−𝑻}𝑨^{−𝟏}$ is symmetric).
--> $2n$ unknowns. 
+-> $2n$ _constraints_. 
 
 This is also the reason __why__ _we need at least_ $n = 3$ images for camera calibration. 
 
-## Estimation of the extrinsic parameters ($R_i$ and $t_i$)- Zhang's Method 5
+## Zhang's Method 5 -> Estimation of the extrinsic parameters ($R_i$ and $t_i$) given $A$ and $H_i$
 Once $𝑨$ has been estimated, it is possible to compute $𝑹_𝒊$ and $𝒕_𝒊$ (for each image) given $𝑨$ and the previously computed homography $𝑯_𝒊$:
 ![[extr.png]]
 As $𝒓_{𝒊𝟏}$ is a unit vector, the normalization constant can be computed as $k = ||A^{-1}h_{i1}||$.
