@@ -62,31 +62,40 @@ This is also the reason __why__ _we need at least_ $n = 3$ images for camera cal
 ## Zhang's Method 5 -> Estimation of the extrinsic parameters ($R_i$ and $t_i$) given $A$ and $H_i$
 Once $𝑨$ has been estimated, it is possible to compute $𝑹_𝒊$ and $𝒕_𝒊$ (for each image) given $𝑨$ and the previously computed homography $𝑯_𝒊$:
 ![[extr.png]]
-As $𝒓_{𝒊𝟏}$ is a unit vector, the normalization constant can be computed as $k = ||A^{-1}h_{i1}||$.
-Then, the same constant can be used to compute:
+As $𝒓_{𝒊𝟏}$ is part of an orthonormal matrix, it is a _unit vector_ (so its magnitude is 1).
+- => the normalization constant can be computed as $k = ||A^{-1}h_{i1}||$.
+
+Then, the same constant $k$ can be used to compute:
 ![[nice_ext.png]]
-There's no guarantee that $r_{i2}$ and $r_{i1}$ wil be unit vectors, or orthogonal (because of noise and other errors). So, we need to _enforce_ it.
-However, SVD of $𝑹_𝒊$ allows _to find the closest orthonormal matrix to it_ by substituting $𝑫$ with $𝑰$.
+In theory, $r_{i3}$ is part of an orthonormal matrix too, so we could enforce the orthonormality property of $𝑹_𝒊$, and say that $𝒓_{𝒊𝟑} = 𝒓_{𝒊𝟏} × 𝒓_{𝒊2}$
 
-These estimations of $R_i$ and $t_i$ are not perfect [..], we just need some good guesses in order for the iteration for converge. 
+However, this is only true in an ideal world. In reality, ==there's no guarantee that $r_{i2}$ and $r_{i1}$ wil be unit vectors, or orthogonal==, because we compute this values by dividing by $k$, and which could be affected by noise and other errors.
 
-## Lens distortion coefficients - Zhang's Method 6
-- Compute an initial guess for distortion parameters $𝑘$ and $p$.
+However, SVD of $𝑹_𝒊$ allows _to find the closest orthonormal matrix to it_ by substituting $𝑫$ with $𝑰$ (identity matrix).
+- SVD is basically saving our ass again and again 😄. 
 
-So far, we have neglected lens distortion and calibrated a _pure pinhole model_. The coordinates predicted by the homographies starting from points in the WRFs correspond to the ideal (undistorted) pixel coordinates of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$. The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
+## Zhang's Method 6 -> Lens distortion coefficients 
+(Compute an initial guess for distortion parameters $𝑘$ and $p$.)
+
+So far, we have neglected lens distortion and calibrated a _pure pinhole model_.
+The coordinates predicted by the homographies starting from points in the WRFs correspond to the _ideal_ (undistorted) _pixel coordinates_ of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$. The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
 
 The Original Zhang's model only takes into account the _radial distortion_, and estimates coefficients $𝑘_1$ , $𝑘_2$ of the radial distortion function:
 ![[radial_dist.png]]
-Where $L(r)$ is the Taylor series, and r is the distance from the image center (aka the norm between $x_{undist}$ and $y_{undist}$)
+Where, as we know, $L(r)$ is the Taylor series, and $r$ is the distance from the image center (aka the norm between $x_{undist}$ and $y_{undist}$)
 
 The lens distortion model is applied _before pixelization_, so as we can see the formula doesn't not use $u$ and $v$.
-$x_{undist}$ and $y_{undist}$ are the ideal undistorted coordinates. 
+- $x_{undist}$ and $y_{undist}$ are the ideal undistorted coordinates in the _continous_ image plane. 
 To compute $u$ and $v$, we need $x_{undist}$ and $y_{undist}$, so it's a chicken and the egg problem. To solve this, we need to use an approximation. 
 
-### Metric image coordinates
-Recall: lens distortion takes place _before_ we change metric image coordinates to pixel coordinates. But we measure and predict pixel coordinates.
+What we're after is a good initial guess of this coordinates:
+- to compute this guess, we'll use the PPM that we've approximated so far. However, this guesses will be really far away from the real ${undist}$ coordinates. 
+	- We run our word points to the PPM I've computed so far. 
 
-We can transform back pixel coordinates $\begin{bmatrix}  u\\  v\end{bmatrix}$ to metric image coordinates  $\begin{bmatrix}  x\\  y\end{bmatrix}$ thanks to the estimated intrinsic matrix $A$: 
+### Metric image coordinates
+Recall: lens distortion takes place _before_ we change metric image coordinates to pixel coordinates. But, nevertheless, we measure and predict pixel coordinates.
+
+We can transform back _pixel coordinates_ $\begin{bmatrix}  u\\  v\end{bmatrix}$ to _metric image coordinates_  $\begin{bmatrix}  x\\  y\end{bmatrix}$ thanks to the estimated _intrinsic matrix_ $A$: 
 ![[matrix_image_coords.png]]
 The same transformation holds between $𝑢_{𝑢𝑛𝑑𝑖𝑠𝑡}$, $𝑣_{𝑢𝑛𝑑𝑖𝑠𝑡}$ and $𝑥_{𝑢𝑛𝑑𝑖𝑠𝑡}$, $𝑦_{𝑢𝑛𝑑𝑖𝑠𝑡}$
 Then, the distortion equation in pixel coordinates become:
@@ -94,24 +103,37 @@ Then, the distortion equation in pixel coordinates become:
 
 ### Lens distortion coefficients
 ![[lens_distortion.png]]
-We get a linear, non-homogeneous system of linear equations 𝑫𝒌 = 𝒅 in the unknowns 𝒌 =  𝑘1 𝑘2 𝑇 . With 𝑚 corners in 𝑛 images we get 2𝑛𝑚 equations in 2 unknowns, which can be solved in a least square sense, i.e., minimizing 𝑫𝒌 − 𝒅 2 , by computing the pseudo-inverse matrix $𝑫^†$ as
+Remember:
+- $u,v$ measure a corner in the image space
+- $u_{undist}$ and $v_{undist}$ measure its projection of that corner into the space using the PPM (approximation). 
+
+We get a linear, non-homogeneous system of linear equations $𝑫𝒌 = 𝒅$ in the unknowns $𝒌 =  [𝑘_1 \ 𝑘_2 ]^𝑇$ . 
+- With $𝑚$ corners in $𝑛$ images we get $2𝑛𝑚$ equations in $2$ unknowns, _which can be solved in a least square sense_, i.e., minimizing $||𝑫𝒌 − 𝒅||_2$ , by computing the pseudo-inverse matrix $𝑫^†$ as
 ![[formula_cazzo.png]]
 
-## Refinement by non-linear optimization - Zhang’s Method 7
-- Refine all parameters $𝐴, 𝑅_𝑖 ,𝑡_𝑖 , 𝑘, 𝑝$ by minimizing the reprojection error
+>[!approfondimento]
+>We are not solving all of the linear equations precisely, using the normal solving methods because it would take too much time (we have $2nm$ equations to solve!!). That's also why we use LSQ. 
+
+## Zhang’s Method 7 -> Refinement by non-linear optimization
+- Refine all parameters $𝐴, 𝑅_𝑖 ,𝑡_𝑖 , 𝑘, 𝑝$ by minimizing the reprojection error.
+
 Now that we have everything, we now need to refine all the approximations that we have. 
 
-Final non-linear refinement of the estimated parameters. As for homographies, the procedure highlighted so far seeks to minimize an _algebraic error_, without any real physical meaning.
-A more accurate solution can instead be found by a so called _Maximum Likelihood Estimate (MLE)_ aimed at _minimization of the geometric_ (i.e. reprojection) error.
-We use all the values estimated so far as initial guesses. Under the hypothesis of i.i.d. (_independent identically distributed_) noise, the MLE for our models is obtained by minimization of the error:
+As for homographies, the procedure highlighted so far seeks to minimize an _algebraic error_, without any real physical meaning.
+A more accurate solution can instead be found by a so called __Maximum Likelihood Estimate (MLE)__ aimed at _minimization of the __geometric___ (i.e. reprojection) _error_.
+We use all the values estimated so far as initial guesses. Under the hypothesis of i.i.d. (_independent identically distributed_) noise, the MLE for our models is obtained __by minimization of the error__:
 ![[refinemnet.png]]
+with respect to all the unknown camera parameters, which can be solved again by using an _iterative algorithm_, like the Levenberg-Marquardt algorithm.
 
 # End of Camera Calibration - What do we do now? WARPING!
 ## Warping to compensate lens distortion
-Lens distortion makes the system non-linear and cumbersome to use. Once a camera has been calibrated, we can _warp_ the images it takes so to simulate a system _without lens distortion_. 
+Lens distortion makes the system non-linear and cumbersome to use. Once a camera has been calibrated, we can __warp__ the images it takes so to simulate a system _without lens distortion_. 
 _Warping_ refers to transformations of the _spatial domain_ of images, while _filtering_ refers to changes _in the values of images_:
 ![[warping.png]]So, in short, warping does not alter the content of the image, but it changes the positions of the pixels (it changes the spatial domain). 
 On the other hand, filtering changes the color the pixel. 
+- i.e. if you rotate the image, you are warping. 
+
+This is also the only time we'll an image processing operation in the second module of the course. 
 
 ### Image Warping
 If we have a function that computes point in image $I’$ starting from point in image $I$, we can copy the value:
@@ -131,20 +153,26 @@ After applying the warping function in general we get _continuous coordinates_, 
 
 ##### Folds and holds
 Regardless of the choice of the mapping, due to rounding 
-- more than one pixel can go to ==one position== (_folds_) 
-- some pixels of the destination image may not be hit (_holes_)
+- ==more than one pixel== can go to ==one position== (_folds_) 
+- some ==pixels of the destination== image may ==not be hit== (_holes_)
 ![[forward_mapping_2.png]]
 
 ### Backward mapping
 We can avoid these problems if we take a value for each coordinate in the output image by using the inverse mapping.
-Yet, the coordinate are still continuous values. Which mapping strategy? 
+Yet, the coordinate are still _continuous values_ (think about it: we are not hitting a precise pixel, but rather as output we would have a real number). Which mapping strategy? 
 - Truncate 
 - Nearest Neighbour 
-- _Interpolate between the 4 closest point_ (bilinear, bicubic, etc…)
+- _Interpolate between the 4 closest point_ (__bilinear__, bicubic, etc…)
 ![[backward_mapping.png]]
 This solves holes by design, since we are trying to find a correspondant for each pixel.  
 
 ### Bilinear Interpolation
 ![[bilinear_interpolation.png]]
+What happens in practice is that I make the _pixel intensity_ to be _as much as the intensity_ of $I_1$, $I_2$ etc... the _closer_ you are to each of them. 
 
-### Undistort warping
+### "Undistort" warping
+Once the lens distortion parameters have been computed by camera calibration, the image can be corrected by a _backward warp_ from the _undistorted_ to the _distorted image_ based on the adopted lens distortion model. 
+- However, to the backward warping, we need a __backward map__. _Zhang's Radial distortion model_ provides this backward mapping since it goes from the undistorted coordinates( $u_{undist}$) to the distorted one ($u$). 
+
+For this images, the image formation model is linear, i.e. the PPM.
+![[undistort.png]]

@@ -13,7 +13,19 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
+                "file": "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          },
+          {
+            "id": "4c58f8432bb11dee",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "2023-05-08 - (x) 0.md",
                 "mode": "source",
                 "source": false
               }
@@ -29,7 +41,8 @@
               }
             }
           }
-        ]
+        ],
+        "currentTab": 1
       }
     ],
     "direction": "vertical"
@@ -103,7 +116,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
+                "file": "2023-05-08 - (x) 0.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +133,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
+                "file": "2023-05-08 - (x) 0.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md"
+                "file": "2023-05-08 - (x) 0.md"
               }
             }
           },
@@ -209,14 +222,16 @@
       }
     ]
   },
-  "active": "1b14ddb874db890c",
+  "active": "4c58f8432bb11dee",
   "lastOpenFiles": [
+    "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
     "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
-    "2023-05-04 - (x) Camera Calibration pt2 and Lens distortion.md",
-    "2023-05-22 - (x).md",
+    "undistort.png",
+    "2023-05-08 - (x) 0.md",
     "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
-    "Images/batch_norm_alternatives.png",
     "Digests/P1L2 - SPATIAL FILTERING.md",
+    "2023-05-22 - (x).md",
+    "Images/batch_norm_alternatives.png",
     "Images/tan_dist.png",
     "Images/camera_calib_noamb.png",
     "Images/list_of_stuff.png",
@@ -225,13 +240,11 @@
     "Images/lens_disto.png",
     "Images/useful_factorization.png",
     "Images/ext_parms_matrix.png",
-    "Images/intrisic_parameter_matrix.png",
     "Digests/P2L1.md",
     "Digests/P2L2.md",
     "2023-05-29 - (x).md",
     "2023-04-17 - (x) Instance Detection.md",
     "2023-05-15 - (x) 0.md",
-    "2023-05-08 - (x) 0.md",
     "2023-03-06 (x).md",
     "2023-03-09 (x).md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",
