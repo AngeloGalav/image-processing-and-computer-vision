@@ -23,7 +23,7 @@ The problem has a number of diverse facets:
 We have a _template_ (or model image) and a _target image_.
 The _model image_ is slid across the target image to be compared at each position to an equally sized window by means of a suitable _similarity or dissimilarity function_:
 - We slide our template over the image at each possible candidate position and in each candidtate position I compute a _similarity or dissimilarity function_. 
-![[template_matching.png]]
+![[Images/template_matching.png]]
 
 #### Dissimilarity and Similarity functions
 ![[dis_sim_fun.png]]
