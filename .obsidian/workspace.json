@@ -8,22 +8,12 @@
         "type": "tabs",
         "children": [
           {
-            "id": "4c58f8432bb11dee",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/cnn1.png"
-              }
-            }
-          },
-          {
             "id": "df16b2bc2b0ef887",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-18 - (x) BOW.md",
+                "file": "2023-05-18 - (x) Intro to CNN.md",
                 "mode": "source",
                 "source": false
               }
@@ -103,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/cnn1.png",
+                "file": "2023-05-18 - (x) Intro to CNN.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/cnn1.png",
+                "file": "2023-05-18 - (x) Intro to CNN.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/cnn1.png"
+                "file": "2023-05-18 - (x) Intro to CNN.md"
               }
             }
           },
@@ -201,41 +191,44 @@
         ],
         "direction": "vertical",
         "x": 960,
-        "y": 425,
+        "y": 488,
         "width": 960,
-        "height": 605,
+        "height": 542,
         "maximize": false,
         "zoom": -0.5
       }
     ]
   },
-  "active": "41da8e61647e3eeb",
+  "active": "df16b2bc2b0ef887",
   "lastOpenFiles": [
-    "Images/results_updated.png",
-    "Images/softmax342.png",
-    "Images/w_agv.png",
-    "Images/functionidk.png",
-    "Images/cnn2.png",
-    "Images/cnn1.png",
-    "Images/linclass3.png",
-    "Images/linclass2.png",
-    "Images/linclass.png",
-    "Images/skip-conn.png",
-    "Images/alexnet_moment.png",
-    "2023-05-18 - (x) BOW.md",
     "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
-    "2023-05-08 - Homographies, Intro to image classification.md",
+    "2023-05-18 - (x) Intro to CNN.md",
+    "Images/bottleneck.png",
+    "Images/relu.png",
+    "Images/multiple_channels.png",
+    "Images/convs_as_sparse.png",
     "2023-05-29 - (x).md",
+    "2023-05-22 - (x).md",
     "2023-06-01 - (x) VGG, Inception, ResNet.md",
+    "2023-06-05 - (x) fuck ipcv.md",
+    "Images/train_classifier.png",
+    "Images/phase_3.png",
+    "Images/sift_space.png",
+    "Images/sift_s.md",
+    "2023-04-17 - (x) Instance Detection.md",
+    "2023-03-06 (x).md",
+    "Images/Bow.png",
+    "Images/ipcv_shittiest_formula.png",
+    "Screenshot_20230605_121741.png",
+    "2023-06-05 - (x).md",
+    "2023-06-05.md",
+    "2023-05-08 - Homographies, Intro to image classification.md",
     "Digests/P1L2 - SPATIAL FILTERING.md",
     "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
-    "2023-04-17 - (x) Instance Detection.md",
     "2023-04-03 (x).md",
     "2023-03-20 (x).md",
     "2023-03-13 (x).md",
     "2023-03-09 (x).md",
-    "2023-03-06 (x).md",
-    "2023-05-22 - (x).md",
     "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
     "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
     "Digests/P2L1.md",
@@ -243,11 +236,7 @@
     "2023-03-02 - Lenses 2, Camera Sensors.md",
     "2023-02-27 - Solving correspondences, Lenses.md",
     "2023-02-23 - Introduction to images and stereo vision.md",
-    "Digests/P1L1 - IMAGES.md",
-    "2023-03-27 (x) 0.md",
-    "2023-02-20 - Quick Intro.md",
     "Digests",
-    "README.md",
     "equations.png~",
     "Lab/LabSession2.ipynb",
     "log_examples.png~",

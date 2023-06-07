@@ -132,7 +132,7 @@ As we know, 𝑘-NN and linear classifiers are limited by the low effectiveness 
 ## Bag of words
 Many ideas from NLP are used in CV. The BoW is one of them. 
 Within the computer vision community, this representation is referred to as the Bag of Words (BoW) or the bag of visual words (BoVW) or the bag of features (BoF) representation
-![[bow.png]]
+![[Images/bow.png]]
 It's called "bag" because it's sort of an unstructured collection of features. 
 
 Given an image, we would like to represent it as a _histogram_, counting the frequency of appearance of every _(code)word_ from a _dictionary_. But images are not made of discrete elements: 
