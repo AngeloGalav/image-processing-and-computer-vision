@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-18 - (x) Intro to CNN.md",
+                "file": "2023-03-09 (x).md",
                 "mode": "source",
                 "source": false
               }
@@ -93,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-05-18 - (x) Intro to CNN.md",
+                "file": "2023-03-09 (x).md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-05-18 - (x) Intro to CNN.md",
+                "file": "2023-03-09 (x).md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-05-18 - (x) Intro to CNN.md"
+                "file": "2023-03-09 (x).md"
               }
             }
           },
@@ -191,9 +191,9 @@
         ],
         "direction": "vertical",
         "x": 960,
-        "y": 488,
+        "y": 540,
         "width": 960,
-        "height": 542,
+        "height": 490,
         "maximize": false,
         "zoom": -0.5
       }
@@ -201,14 +201,25 @@
   },
   "active": "df16b2bc2b0ef887",
   "lastOpenFiles": [
+    "2023-03-06 - Convolutions and Correlations.md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "meanie.png",
+    "mean_filtering1.png",
+    "2023-03-13 (x).md",
+    "2023-03-09 (x).md",
+    "2023-02-27 - Solving correspondences, Lenses.md",
+    "2023-03-02 - Lenses 2, Camera Sensors.md",
+    "2023-04-03 (x).md",
+    "2023-03-20 (x).md",
+    "2023-03-27 (x) 0.md",
+    "2023-05-22 - (x).md",
+    "2023-05-29 - (x).md",
+    "2023-05-18 - Intro to CNN.md",
     "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
-    "2023-05-18 - (x) Intro to CNN.md",
     "Images/bottleneck.png",
     "Images/relu.png",
     "Images/multiple_channels.png",
     "Images/convs_as_sparse.png",
-    "2023-05-29 - (x).md",
-    "2023-05-22 - (x).md",
     "2023-06-01 - (x) VGG, Inception, ResNet.md",
     "2023-06-05 - (x) fuck ipcv.md",
     "Images/train_classifier.png",
@@ -216,26 +227,15 @@
     "Images/sift_space.png",
     "Images/sift_s.md",
     "2023-04-17 - (x) Instance Detection.md",
-    "2023-03-06 (x).md",
     "Images/Bow.png",
-    "Images/ipcv_shittiest_formula.png",
-    "Screenshot_20230605_121741.png",
     "2023-06-05 - (x).md",
     "2023-06-05.md",
     "2023-05-08 - Homographies, Intro to image classification.md",
-    "Digests/P1L2 - SPATIAL FILTERING.md",
     "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
-    "2023-04-03 (x).md",
-    "2023-03-20 (x).md",
-    "2023-03-13 (x).md",
-    "2023-03-09 (x).md",
     "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
     "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
     "Digests/P2L1.md",
     "Digests/P2L2.md",
-    "2023-03-02 - Lenses 2, Camera Sensors.md",
-    "2023-02-27 - Solving correspondences, Lenses.md",
-    "2023-02-23 - Introduction to images and stereo vision.md",
     "Digests",
     "equations.png~",
     "Lab/LabSession2.ipynb",

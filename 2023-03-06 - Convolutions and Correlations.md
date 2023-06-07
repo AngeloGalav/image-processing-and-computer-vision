@@ -1,36 +1,23 @@
----------------
-# TODOS
-- find dirac function definition
-- convolution definition
-- modify the convolution image
-- Add point references to practal implementation in discrete convolution
-- fill up last part
-- remove symbols
-
-#### Not quite clear
-- Convolution part
-
---------
 ## Understanding Noise
 Noise appears in the image as random fluctuations of the actual values. 
 Noise changes continuosly, is not always constant obviously. I.e. noise at time $k=1$ is not the same as noise at time $k=10$. 
 
-Noise is more apparent in uniform regions 
+Noise is more apparent in _uniform regions_.
 ![[noise_example.png]]
-$\hat I$ represent the real value of the colour in the scene, and it is not dependant on $k$. 
+$\hat I$ represent the _real_ value of the colour in the scene, and it is not dependent on $k$. 
 $n_k(p)$ is independent and identically distributed:
 - It does not depend on the noise of other pixels.  
 - The noise is _identically distributed_, and is equivalent to a _Gaussian distribution_ with 0 mean ($N(0, \sigma)$). 
 That's why we call it a __Gaussian noise__.
 
-If we assume that the camera is not moving and that the scene is not changing, I can denoise the picture by taking an average of the pixels intensity in sequent $k$. 
+If we assume that the camera is not moving and that the scene is not changing, I can denoise the picture by taking an _average of the pixels intensity_ in sequent _time frames_ $k$. 
 ![[denoising_formula1.png]]
 Since the noise has a 0-average Gaussian distribution, then the _average_ of $n_k(p)$ _approaches 0_ when increasing N.
 
 ### What if we're given a single image?
-We may compute a mean across neighbouring pixels, i.e. a spatial rather than temporal mean: 
+We may compute a mean _across neighbouring pixels_, i.e. a spatial rather than temporal mean: 
 ![[single_image_denoising.png]]
-$K$ is called a __supporting window__, which defines a neighbouring region around my pixel.  
+$K$ is called a __supporting window__, which defines a _neighbouring region_ around my pixel.  
 If the window is too large, we may consider pixels from different objects and average their value (and we dont want that). 
 - Trade-off in window size. 
 
@@ -51,7 +38,7 @@ and $a,b$ are two constants.
 The operator is said to be __translation-equivariant__ iff:
 ![[formulas_3.png]]
 
-• If the operator is LTE, the output signal is given by the _convolution_ between the input signal and the impulse response (point spread function), $h(x, y) = T\{\delta (x, y)\}$, of the operator:
+If the operator is LTE, the output signal is given by the _convolution_ between the input signal and the impulse response (point spread function), $h(x, y) = T\{\delta (x, y)\}$, of the operator:
 ![[formulas_4.png]]
 where: 
 - $\delta$ is the _unit impulse_. 
@@ -66,10 +53,10 @@ The convolution operation is often denoted using the symbol “∗”, e.g.
 $$
 o(x,y) = i(x,y) ∗ h(x, y)
 $$
-- Associativity: gives us the possibility of performing operations more efficiently: doing a chain of operation is better (in this case) than doing a single, big operation. 
-- Commutativity.
-- Distributive property w.r.t. to the Sum: $f * (g + h) = f * g + f *h$.
-- Convolution Commutes with Differentiation -> $(f * g)' = f' * g = f *g'$.
+- __Associativity__: gives us the possibility of performing operations more efficiently: doing a chain of operation is better (in this case) than doing a single, big operation. 
+- __Commutativity__.
+- __Distributive__ property w.r.t. to the Sum: $f * (g + h) = f * g + f *h$.
+- __Convolution Commutes with Differentiation__ -> $(f * g)' = f' * g = f *g'$.
 
 #### Correlation
 - The correlation of signal $i(x,y)$ w.r.t. signal $h(x,y)$ is defined as:
@@ -100,12 +87,14 @@ _Convolutional Neural Networks_ are actually _Correlational Neural Networks_.
 
 ## Discrete Convolution
 ![[discrete_convolution.png]]
-where �(�,�) and �(�,�) are the discrete 2D input and output signals, respectively, and H i,� = � � �,� is the kernel of the discrete LTE operator, i.e. the response to the 2D discrete unit impulse (Kronecker delta function), �(�,�). 
+where $I(i,j)$ and $O(i,j)$ are the discrete 2D _input_ and _output_ signals, respectively, and $H (i,j) = T \{\delta(i,j)\}$ is the _kernel_ of the discrete LTE operator.
+- i.e. the response to the 2D discrete unit impulse (Kronecker delta function), $\delta(i,j)$. 
 
-As for continuous signals, discrete convolution consists in summing the product of the two signals where one has been reflected about the origin and translated. 
+As for continuous signals, discrete convolution consists in _summing the product_ of the _two signals_ where _one_ has been _reflected about the origin_ and _translated_. 
 
 ==The previously highlighted four major convolution properties hold for discrete convolution too==.
 
+#### Practical Implementation
 In image processing, both the _input image_ and the _kernel_ are stored into _matrixes_ of given _finite sizes_, with the image being much larger than the kernel. One would cycle through the kernel:
 ![[image_kernel_matrix_example.png]]
 
@@ -120,4 +109,21 @@ Border Issue, two main options:
 - PAD (preferred in CNNs) 
 	- How to pad: zero-padding, replicate (aaaIa..…dIddd), reflect (cbaIabc..…dfgIgfd), reflect_101 (dcblabcd......efghlgfe).
 
-\[mettere ultima slide\]
+## Mean Filter
+Mean filtering is the simplest (and fastest) way to denoise an image. It consists in replacing each _pixel intensity_ by the _average intensity_ over a chosen neighbourhood (e.g. 3x3, 5x5, 7x7…).
+
+![[meanie.png]]
+
+- According to signal processing theory, the Mean Filter carries out a __low-pass filtering__ operation, which in image processing is also referred to as __image smoothing__. 
+- Smoothing is often aimed at image denoising, though sometimes the purpose is to cancel out small-size unwanted details that might hinder the image analysis task. 
+- Mean filtering is inherently fast because _multiplications are not needed_ (you can multiply only once).
+
+![[mean_filtering1.png]]
+
+-----
+Old todos in case I forget something important
+# TODOS
+- find dirac function definition
+- convolution definition
+- modify the convolution image
+- Add point references to practal implementation in discrete convolution
