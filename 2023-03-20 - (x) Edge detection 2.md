@@ -89,7 +89,7 @@ _Speed_ is desirable for both, and _in particular for detectors_, which need to 
 ## Moravec Interest Point Detector
 Edge pixels can be hardly told apart as they look very similar along the direction perpendicular to the gradient 
 - _Edges are locally ambiguous_, many other points that look just the same.
-![[edges.png]]
+![[Images/edges.png]]
 - Pixels exhibiting a large variation along all directions => better for establishing reliable correspondences. 
 
 The _cornerness_ at $p$ is given by the minimum squared difference between the patch (e.g. 7x7) centered at $p$ and those centered at its 8 neighbours.

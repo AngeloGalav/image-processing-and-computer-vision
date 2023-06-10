@@ -8,12 +8,22 @@
         "type": "tabs",
         "children": [
           {
-            "id": "df16b2bc2b0ef887",
+            "id": "437cfe03ee34943c",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/averages_edge.png"
+              }
+            }
+          },
+          {
+            "id": "c3fc6a825a582149",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-03-09 (x).md",
+                "file": "2023-03-06 - Convolutions and Correlations.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "curse",
+                "query": "\"separability\"",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-03-09 (x).md",
+                "file": "Images/averages_edge.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-03-09 (x).md",
+                "file": "Images/averages_edge.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-03-09 (x).md"
+                "file": "Images/averages_edge.png"
               }
             }
           },
@@ -175,12 +185,12 @@
             "type": "tabs",
             "children": [
               {
-                "id": "108f9ebaa04cf523",
+                "id": "aba5ad0735642a77",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Digests/P1L2 - SPATIAL FILTERING.md",
+                    "file": "Digests/P1L3.md",
                     "mode": "source",
                     "source": false
                   }
@@ -190,52 +200,54 @@
           }
         ],
         "direction": "vertical",
-        "x": 960,
+        "x": 947,
         "y": 540,
-        "width": 960,
+        "width": 973,
         "height": 490,
         "maximize": false,
         "zoom": -0.5
       }
     ]
   },
-  "active": "df16b2bc2b0ef887",
+  "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
-    "2023-03-06 - Convolutions and Correlations.md",
-    "Digests/P1L2 - SPATIAL FILTERING.md",
-    "meanie.png",
-    "mean_filtering1.png",
-    "2023-03-13 (x).md",
-    "2023-03-09 (x).md",
-    "2023-02-27 - Solving correspondences, Lenses.md",
-    "2023-03-02 - Lenses 2, Camera Sensors.md",
-    "2023-04-03 (x).md",
-    "2023-03-20 (x).md",
+    "2023-04-17 - (x) Instance Detection.md",
+    "Digests/P1L3.md",
+    "2023-04-03 - (x) DoG.md",
     "2023-03-27 (x) 0.md",
+    "2023-03-20 - (x) Edge detection 2.md",
+    "2023-03-13 - Edge detection pt1, NMS, Hysteresis.md",
+    "Images/hysteresis.png",
+    "Images/camnny_fuck_uyou.png",
+    "Images/Gaussian_sep.png",
+    "2023-03-09 - Gaussian, Median and Bilateral filters.md",
+    "2023-03-06 - Convolutions and Correlations.md",
+    "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
+    "2023-05-18 - Intro to CNN.md",
+    "2023-06-05 - (x) fuck ipcv.md",
+    "2023-06-01 - (x) VGG, Inception, ResNet.md",
     "2023-05-22 - (x).md",
     "2023-05-29 - (x).md",
-    "2023-05-18 - Intro to CNN.md",
-    "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
-    "Images/bottleneck.png",
-    "Images/relu.png",
-    "Images/multiple_channels.png",
-    "Images/convs_as_sparse.png",
-    "2023-06-01 - (x) VGG, Inception, ResNet.md",
-    "2023-06-05 - (x) fuck ipcv.md",
-    "Images/train_classifier.png",
-    "Images/phase_3.png",
-    "Images/sift_space.png",
-    "Images/sift_s.md",
-    "2023-04-17 - (x) Instance Detection.md",
-    "Images/Bow.png",
-    "2023-06-05 - (x).md",
-    "2023-06-05.md",
-    "2023-05-08 - Homographies, Intro to image classification.md",
+    "2023-03-02 - Lenses 2, Camera Sensors.md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "MockQuestions/Untitled.md",
+    "MockQuestions",
+    "README.md",
     "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
+    "2023-02-23 - Introduction to images and stereo vision.md",
+    "2023-02-27 - Solving correspondences, Lenses.md",
+    "2023-02-20 - Quick Intro.md",
+    "2023-05-08 - Homographies, Intro to image classification.md",
     "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
     "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
-    "Digests/P2L1.md",
-    "Digests/P2L2.md",
+    "Images/averages_edge.png",
+    "Images/edge_detection_by_gradient_thresh.png.nWeXBd",
+    "Images/edges 1.png",
+    "Images/deploy.png",
+    "Images/non_local_means.png",
+    "Images/formulas_expanded.png",
+    "Images/median_filter.png",
+    "Images/Gaussian_kernel.png",
     "Digests",
     "equations.png~",
     "Lab/LabSession2.ipynb",

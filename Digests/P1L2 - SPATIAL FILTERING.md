@@ -53,3 +53,34 @@ Conceptually, to obtain the output image we need to _slide the kernel_ across th
 It's the simplest way of denoising an image. 
 - It consists in replacing each pixel intensity with the average intensity over a chosen neighbourhood. 
 - Mean filtering is inherently fast because _multiplications are not needed_ (you can multiply only once).
+
+Now this is great, however it is too blurry and it also throws the details of our image away.
+
+---
+## Gaussian filtering
+As $\sigma$ gets larger, _small details disappear_ and the image content deals with larger size structures. Thus, filtering with a chosen $\sigma$ can be thought of as setting the “scale” of _interest_ to analyse image content.
+
+The discrete Gaussian kernel can be obtained _by sampling the corresponding continuous function_. As for the size of the kernel:
+- We should use _larger sizes_ for filters with _high_ $\sigma$, _smaller sizes_ whenever $\sigma$ is _smaller_. 
+-  a typical rule-of-thumb dictates taking a $(2k + 1)×(2k + 1)$ _kernel_ with $k = \lceil 3\sigma \rceil$.
+
+### Separability
+To further speed-up the filtering operation, one can deploy the separability property: due to the _2D Gaussian_ being the product of _two 1D Gaussians_, the original __2D convolution can be split into the chain of two 1D convolutions__, i.e. 
+
+## Median filter 
+It's _non-linear filters_ whereby each pixel intensity is replaced by the _median_ over a given _neighbourhood_.
+Good with salt&pepper noise, but _it cannot deal with Gaussian noise.
+
+## Bilateral filter
+The bilateral filter allows to denoise Gaussian-like noise without blurring the image (aka preserving the edges). 
+![[output_bilateral.png]]
+Where:
+![[formulas_expanded.png]]
+
+In this type of filter, the values of the kernel $H$ will be the highest when the distance (both spatial and intensity) between $p,q$ is small. 
+- The pixel on the other side of the edge contribute less.
+
+## Non-local means filter
+The key idea is that the _similarity among patches_ spread over the image can be _distributed_ to _achieve denoising_.
+
+---
