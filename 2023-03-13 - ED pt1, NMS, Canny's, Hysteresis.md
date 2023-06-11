@@ -29,7 +29,7 @@ A 2D Step-Edge is characterized not only by its strength but also its _direction
 The magnitude can give us the orientation of the edge. 
 
 ## Discrete approximation of the Gradient
-To _discretize derivate_ image derivatives, we can exploit the use of _differences between intensities_. 
+To _discretize derivate_ image __partial derivatives__, we can exploit the use of _differences between intensities_. 
 We can use both _backward_ an _forward_ differences:
 ![[discrete_approximation.png]]
 
@@ -68,7 +68,8 @@ We can compute the differences on averages.
 Partial derivative can be used to compute the _magnitude_
 - we can take account of the division during the threshold. 
 
-## Prewitt and Sobel operatos
+## Prewitt and Sobel operators - another way to approximate partial derivatives
+
 ![[prewitt_sobel.png]]
 In short:
 - __Sobel__ -> the central pixel can be weighted more
@@ -98,7 +99,7 @@ We are trying to find the _maximum value_ along a certain _axis_. In this exampl
 Btw, these values are gradient magnitudes. 
 
 ![[nms_suppression.png]]
-Now, as we've said, we need to look also along the gradient direction. Problem is, we don’t know in advance the correct direction to carry out NMS. 
+Now, as we've said, we need to look also along the gradient direction. Problem is, ==we don’t know in advance the correct direction to carry out NMS==. 
 
 So, the direction has to be estimated locally (based on _gradient’s direction_). 
 To find the direction of the gradient, we need to find the _maximum variation_ of the gradient. 
@@ -109,8 +110,8 @@ In this example, we are discretizing the gradient.
 So, we select the _closest point_ to A and B, $(i-1, j+1)$ and $(i+1,j-1)$ respectively (aka the points circled in blue). 
 - The magnitude of the gradient has to be _estimated_ at points which _do not belong_ to the _discrete pixel grid_.
 
-However, we can also opt to not use a discrete approximation approximation, but rather use a precise value by means of interpolation. 
-grid- Such values can be estimated by _linear interpolation_ of those computed at the _closest points_ belonging to the _grid_.
+However, we can also opt to not use a discrete approximation, but rather use a precise value by means of interpolation. 
+Such values can be estimated by _linear interpolation_ of those computed at the _closest points_ belonging to the _grid_.
 
 ![[nms_suppression_2.png]]
 The value of $\Delta x$ is easily computed using the direction of the gradient.  
@@ -130,7 +131,8 @@ He proposed the following three criteria:
 
 Also, we want sharp edges! No thick edges!!
 
-Addressing the 1D case and modeling an edge as a noisy step, Canny shows that the _optimal edge detection operation_ consists in finding ==_local extrema_ of the _convolution_ of the _signal_ by a first order _Gaussian derivative_== (i.e. G’(x)).
+Addressing the 1D case and modeling an edge as a noisy step, Canny shows that the _optimal edge detection operation_ consists in finding ==_local extrema_ of the _convolution_ of the _signal_ by a first order _Gaussian derivative_== (i.e. $G’(x)$).
+- aka, __local extrema__ convoluted by a __Gaussian derivative__. 
 
 A straightforward Canny edge detector can be achieved by: 
 1. __Gaussian smoothing__ 
@@ -138,8 +140,9 @@ A straightforward Canny edge detector can be achieved by:
 3. __NMS__ along the gradient direction
 
 #### Why Gaussians & Convolutions?
-We use Gaussians & Convolutions to exploit both [[2023-03-09 - Gaussian, Median and Bilateral filters#Deploying Separability|separability]] and the [[2023-03-06 - Convolutions and Correlations#Properties of Convolutions|commutatibility of differentiaiton]] property of convolutions. 
+We use Gaussians & Convolutions to exploit both [[2023-03-09 - Filters - Gaussian, Median and Bilateral#Deploying Separability|separability]] and the [[2023-03-06 - Convolutions and Correlations#Properties of Convolutions|commutatibility of differentiaiton]] property of convolutions. 
 ![[Gaussian_sep.png]]
+We can use the two partial derivatives to compute the gradient. 
 
 ### Canny’s Edge Detector Threshold
 NMS is often followed by _thresholding_ of gradient magnitude to help distinguish between true “_semantic_” edges and _unwanted_ ones.

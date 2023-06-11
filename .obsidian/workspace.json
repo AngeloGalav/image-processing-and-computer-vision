@@ -13,17 +13,17 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/averages_edge.png"
+                "file": "Images/C_values.png"
               }
             }
           },
           {
-            "id": "c3fc6a825a582149",
+            "id": "242a297857fd4515",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-03-06 - Convolutions and Correlations.md",
+                "file": "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
                 "mode": "source",
                 "source": false
               }
@@ -58,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "\"separability\"",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/averages_edge.png",
+                "file": "Images/C_values.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/averages_edge.png",
+                "file": "Images/C_values.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/averages_edge.png"
+                "file": "Images/C_values.png"
               }
             }
           },
@@ -185,12 +185,12 @@
             "type": "tabs",
             "children": [
               {
-                "id": "aba5ad0735642a77",
+                "id": "be0cabad6333b641",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Digests/P1L3.md",
+                    "file": "Digests/P1L4.md",
                     "mode": "source",
                     "source": false
                   }
@@ -200,9 +200,9 @@
           }
         ],
         "direction": "vertical",
-        "x": 947,
+        "x": 960,
         "y": 540,
-        "width": 973,
+        "width": 960,
         "height": 490,
         "maximize": false,
         "zoom": -0.5
@@ -211,43 +211,43 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
-    "2023-04-17 - (x) Instance Detection.md",
-    "Digests/P1L3.md",
-    "2023-04-03 - (x) DoG.md",
+    "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
+    "Digests/P1L4.md",
+    "Images/C_values.png",
+    "Images/corenerness_function.png",
+    "Images/M_is_real.png",
+    "Images/diagonal.png",
+    "Images/harris2.png",
+    "Images/taylor_expasion.png",
+    "Images/harris1.png",
+    "2023-02-27 - Solving correspondences, Lenses.md",
+    "Digests/P1L3 - EDGE DETECTORS.md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "Digests/P1L1 - IMAGES.md",
+    "Digests/P1L5.md",
+    "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
+    "2023-03-09 - Filters - Gaussian, Median and Bilateral.md",
+    "2023-03-06 - Convolutions and Correlations.md",
+    "2023-03-02 - Lenses 2, Camera Sensors.md",
+    "2023-02-20 - Quick Intro.md",
+    "2023-02-23 - Introduction to images and stereo vision.md",
     "2023-03-27 (x) 0.md",
-    "2023-03-20 - (x) Edge detection 2.md",
-    "2023-03-13 - Edge detection pt1, NMS, Hysteresis.md",
+    "Images/averages_edge.png",
+    "2023-04-17 - (x) Instance Detection.md",
+    "2023-04-03 - (x) DoG.md",
     "Images/hysteresis.png",
     "Images/camnny_fuck_uyou.png",
-    "Images/Gaussian_sep.png",
-    "2023-03-09 - Gaussian, Median and Bilateral filters.md",
-    "2023-03-06 - Convolutions and Correlations.md",
     "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
     "2023-05-18 - Intro to CNN.md",
     "2023-06-05 - (x) fuck ipcv.md",
     "2023-06-01 - (x) VGG, Inception, ResNet.md",
     "2023-05-22 - (x).md",
     "2023-05-29 - (x).md",
-    "2023-03-02 - Lenses 2, Camera Sensors.md",
-    "Digests/P1L2 - SPATIAL FILTERING.md",
     "MockQuestions/Untitled.md",
     "MockQuestions",
     "README.md",
     "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
-    "2023-02-23 - Introduction to images and stereo vision.md",
-    "2023-02-27 - Solving correspondences, Lenses.md",
-    "2023-02-20 - Quick Intro.md",
-    "2023-05-08 - Homographies, Intro to image classification.md",
-    "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
-    "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
-    "Images/averages_edge.png",
     "Images/edge_detection_by_gradient_thresh.png.nWeXBd",
-    "Images/edges 1.png",
-    "Images/deploy.png",
-    "Images/non_local_means.png",
-    "Images/formulas_expanded.png",
-    "Images/median_filter.png",
-    "Images/Gaussian_kernel.png",
     "Digests",
     "equations.png~",
     "Lab/LabSession2.ipynb",
