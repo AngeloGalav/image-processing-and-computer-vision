@@ -125,6 +125,7 @@ Since $M$ is _real_ and _symmetric_, it can always be _diagonalized_ by a __rota
 - $R^T$ is the _rotation matrix_ that aligns the image axes to the _eigenvectors_ of $M$
 ![[M_is_real.png]]
 We just compute the eigenvalues of $M$. 
+- Rotation invariance: the same eigenvalues are always computed. 
 
 Since we would need to compute _eigenvalues_ at each pixel would be costly, 
 we compute a more efficient “_cornerness_” function: 
