@@ -19,7 +19,7 @@ It is worth highlighting that the _weighting function_ $w(x,y)$ used by the Harr
 As we know, objects in images undergo changes (due to rotation, illumination, scale).
 - __Rotation invariance__: _eigenvalues_ of $M$ are _invariant to a rotation_ of the _image_ axes and thus so is _Harris cornerness function_.
 
-- However, it is not subject to illumination invariance (for the most part). 
+- However, it is __not subject to illumination invariance__ (for the most part). 
 	- Actually, it is light invariant for an _addictive factor_  ($I’ = I + b$) due to the use of derivatives (it gets removed during the computation of the gradient, as shown in this picture).
 	![[additive_bias.png]]
 	- But, it is _not invariant_ to _multiplication_ by a gain factor ($I’ = a \cdot I$) ==> _derivatives get multiplied_ by the same factor.
@@ -86,7 +86,7 @@ Considering the centers (red points) of the two dark blobs
 
 The ratio between the two characteristic scales is roughly the same as the ratio between the sizes (diameters) of the two blobs.
 The idea is to look for _extrema_ across $x, y, σ$ 
-- => we have found a feature that has a _position_ given by $x$ and $y$ and a _scale_ given by the _sigma_ at which it is _maximum_.
+- meaning, that we have found a feature that has a _position_ given by $x$ and $y$ and a _scale_ given by the _sigma_ at which it is _maximum_.
 
 #### Multi-Scale Feature Detection
 Features (_Blob-like_) and scales detected as _extrema_ of the scale-normalized LOG.
@@ -102,4 +102,9 @@ Lowe proposes to detect keypoints by seeking for the extrema of the _DoG_ (_Diff
 This approach provides a computationally efficient approximation of Lindeberg’s scale-normalized LOG:
 ![[LOG.png]]
 Lowe proves that this is a scaled version of Lindberg. $(k-1)$ is a _constant factor_, it does _not influence extrema location_ => the choice of $k$ is _not critical_.
-Both detectors are rotation invariant and find blob-like features (circularly symmetric filters).
+
+Both detectors are _rotation invariant_ and find _blob-like features_ (__circularly symmetric filters__).
+
+>[!WARNING]
+>DoG allows us to find features as _blobs_ in images, which are _extremas_ in the $(x,y,\sigma)$ domain. 
+>Also, Blobs are rotation and scale invariant. 
