@@ -23,9 +23,11 @@
             "id": "0b0d2e2f0a35acfe",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Images/sift.png"
+                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+                "mode": "source",
+                "source": false
               }
             }
           },
@@ -116,7 +118,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/sift.png",
+                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -133,7 +135,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/sift.png",
+                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -156,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/sift.png"
+                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md"
               }
             }
           },
@@ -190,20 +192,20 @@
     "type": "floating",
     "children": [
       {
-        "id": "710e435453056d3e",
+        "id": "0a36319150b3cbad",
         "type": "window",
         "children": [
           {
-            "id": "5a84af63e0a9b190",
+            "id": "ee1af8cb23db56d8",
             "type": "tabs",
             "children": [
               {
-                "id": "be0cabad6333b641",
+                "id": "270b19c24a162723",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Digests/P1L4.md",
+                    "file": "Digests/P1L5 - INSTANCE DETECTION.md",
                     "mode": "source",
                     "source": false
                   }
@@ -224,32 +226,33 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
+    "Digests/P2L1.md",
+    "Digests/P1L5 - INSTANCE DETECTION.md",
+    "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+    "Images/final_HT.png",
+    "Images/AA.png",
+    "Images/HT.png",
+    "Images/zncc.png",
+    "2023-06-05 - (x) fuck ipcv.md",
+    "2023-06-01 - (x) VGG, Inception, ResNet.md",
+    "2023-05-29 - (x).md",
+    "2023-05-22 - (x).md",
+    "Digests/P1L4.md",
+    "Images/sift.png",
     "Images/extrema.png",
     "Images/histogram.png",
     "Images/sift2.png",
     "2023-04-03 - DoG, SIFT.md",
-    "Digests/P1L4.md",
-    "2023-04-17 - (x) Instance Detection.md",
     "Images/thres_NN.png",
     "Images/matching_process.png",
-    "Images/sift.png",
-    "Images/local_pixel_frame.png",
     "2023-03-27 - Invariances, Scale-space, Intro to DoG.md",
-    "2023-05-22 - (x).md",
-    "2023-05-29 - (x).md",
     "2023-05-18 - Intro to CNN.md",
-    "2023-06-05 - (x) fuck ipcv.md",
-    "2023-06-01 - (x) VGG, Inception, ResNet.md",
     "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
     "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
-    "Images/additive_bias.png",
-    "Images/laplac.png",
-    "Images/multiscale_feature.png",
     "2023-02-27 - Solving correspondences, Lenses.md",
     "Digests/P1L3 - EDGE DETECTORS.md",
     "Digests/P1L2 - SPATIAL FILTERING.md",
     "Digests/P1L1 - IMAGES.md",
-    "Digests/P1L5.md",
     "2023-03-09 - Filters - Gaussian, Median and Bilateral.md",
     "2023-03-06 - Convolutions and Correlations.md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",
