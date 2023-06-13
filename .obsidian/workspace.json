@@ -8,43 +8,52 @@
         "type": "tabs",
         "children": [
           {
-            "id": "620102745b00853a",
+            "id": "50a1d1316c7f13b1",
+            "type": "leaf",
+            "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/second_filter.png"
+              }
+            }
+          },
+          {
+            "id": "b2ec9f36d51ad698",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-04-03 - DoG, SIFT.md",
+                "file": "2023-05-29 - (x).md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "0b0d2e2f0a35acfe",
+            "id": "4952cd14bcb9d10a",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+                "file": "2023-05-18 - Intro to CNN.md",
                 "mode": "source",
                 "source": false
               }
             }
           },
           {
-            "id": "368a503d46270a76",
+            "id": "c2c58bef84a7de31",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-22 - (x).md",
+                "file": "2023-05-18 - Intro to CNN.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
-        ],
-        "currentTab": 1
+        ]
       }
     ],
     "direction": "vertical"
@@ -118,7 +127,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+                "file": "Images/second_filter.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -135,7 +144,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+                "file": "Images/second_filter.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -158,7 +167,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md"
+                "file": "Images/second_filter.png"
               }
             }
           },
@@ -200,12 +209,12 @@
             "type": "tabs",
             "children": [
               {
-                "id": "270b19c24a162723",
+                "id": "51676116b90930c3",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Digests/P1L5 - INSTANCE DETECTION.md",
+                    "file": "Digests/P2L4.md",
                     "mode": "source",
                     "source": false
                   }
@@ -226,27 +235,31 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
-    "Digests/P2L1.md",
+    "Images/conv_example.png",
+    "2023-05-22 - CNNs in depth, receptive field, stride & padding, pooling layers.md",
+    "Digests/P2L4.md",
+    "Images/example_LENet.png",
+    "2023-05-29 - (x).md",
+    "2023-06-05 - (x) fuck ipcv.md",
+    "Images/strided_form.png",
+    "0padding.png",
+    "Images/zero_padding.png",
+    "2023-05-18 - Intro to CNN.md",
+    "2023-06-01 - (x) VGG, Inception, ResNet.md",
+    "Images/overall.png",
+    "Images/second_filter.png",
+    "Images/feature map.png",
     "Digests/P1L5 - INSTANCE DETECTION.md",
+    "Digests/P2L3.md",
+    "Digests/P2L2.md",
+    "Digests/P2L5.md",
     "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+    "Digests/P2L1.md",
     "Images/final_HT.png",
     "Images/AA.png",
-    "Images/HT.png",
-    "Images/zncc.png",
-    "2023-06-05 - (x) fuck ipcv.md",
-    "2023-06-01 - (x) VGG, Inception, ResNet.md",
-    "2023-05-29 - (x).md",
-    "2023-05-22 - (x).md",
     "Digests/P1L4.md",
-    "Images/sift.png",
-    "Images/extrema.png",
-    "Images/histogram.png",
-    "Images/sift2.png",
     "2023-04-03 - DoG, SIFT.md",
-    "Images/thres_NN.png",
-    "Images/matching_process.png",
     "2023-03-27 - Invariances, Scale-space, Intro to DoG.md",
-    "2023-05-18 - Intro to CNN.md",
     "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
     "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
     "2023-02-27 - Solving correspondences, Lenses.md",
@@ -257,12 +270,7 @@
     "2023-03-06 - Convolutions and Correlations.md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",
     "2023-02-20 - Quick Intro.md",
-    "2023-02-23 - Introduction to images and stereo vision.md",
-    "2023-05-15 - Cross-entropy, GD, Intro to BOW.md",
-    "MockQuestions/Untitled.md",
     "MockQuestions",
-    "README.md",
-    "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
     "Images/edge_detection_by_gradient_thresh.png.nWeXBd",
     "Digests",
     "equations.png~",

@@ -103,7 +103,7 @@ $$
 - Every layer is often called a fully-connected layer, as every element of the input influences every element of the output. A neural network with 2 or more layers is also called a __Multi-Layer Perceptron (MLP)__.
 
 ### Deep Neural Network
-L layers in the network, then the network is consider to be deep, 
+L layers in the network, then the network is consider to be deep.
 _Number of layers_ is the _depth of the network_. 
 - If 𝐿 > 2, we consider the network to be “deep”. 
 
@@ -143,7 +143,7 @@ In standard convolutions, we would _flip the kernel_. Nobody does this, so what 
 
 ## Convolution as matrix multiplication
 Convolution can be interpreted as _matrix multiplication_, if we reshape inputs and outputs.
-The resulting matrix is still a linear operator, which: 
+The resulting matrix is __still a linear operator__, which: 
 1. shares parameters across its rows 
 2. is sparse, i.e. each output unit is connected only to a small set of neighboring input entries 
 3. seamlessly adapts to _varying input sizes_ 
@@ -159,5 +159,8 @@ Note that correlation is ==__not equivariant__ with respect to rotation or scale
 ## Multiple input channels
 Images have 3 channels, so convolution kernels will be a _3-dimensional tensors_ of size $3 × 𝐻_𝐾 × 𝑊_𝐾$ and
 ![[multiple_channels.png]]
-This is still a 2D convolution however, since we slide the kernel in these 2 dimensions only: the thing is, we are working with 3d data structures. 
-- The bias, because of equivariance, is the same in all transformations. 
+This is still a _2D convolution_ however, since we slide the kernel in these 2 dimensions only: the thing is, we are working with 3d data structures. 
+- The bias, because of equivariance, is the same in all transformations.  
+- Filters and input depth always match, and the 3rd dimension of a filter is usually not implicit. 
+
+In the picture, we have a 5x5 conv., but it has 75 params (5x5x3).
