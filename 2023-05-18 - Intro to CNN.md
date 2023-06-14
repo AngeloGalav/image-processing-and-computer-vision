@@ -56,7 +56,7 @@ That is, until DL came to be.
 In BoW, the representation is fixed, and there's learning on the hyperparameters of the SVM. 
 That is opposed to what happens in Deep learning. 
 
-DL methods are now mostly used to modify the representation of images in order to make feature extraction easier.
+DL methods are now mostly used to modify the _representation of images_ in order to make feature extraction easier.
 
 ## Neural Networks
 ![[linclass.png]]
@@ -98,9 +98,11 @@ Given the formula:
 $$
 𝑓 (𝒙; 𝜃) = 𝑊_2𝒉 + 𝒃_𝟐 = 𝑊_2𝜙(𝑊_1𝒙 + 𝒃_𝟏) + 𝒃_𝟐 = s$$
 - $𝑥$ is the _input tensor_ 
-- $ℎ, 𝑠$ are _activations_ 
+- $ℎ, 𝑠$ are ___activations___ 
 - $𝑊_𝑖 , 𝑏_𝑖$ (and other numbers we may use to go from one activation to another one) are _parameters_ 
 - Every layer is often called a fully-connected layer, as every element of the input influences every element of the output. A neural network with 2 or more layers is also called a __Multi-Layer Perceptron (MLP)__.
+
+h,b,W are all associated to a specific layer.
 
 ### Deep Neural Network
 L layers in the network, then the network is consider to be deep.

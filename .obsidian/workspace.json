@@ -4,50 +4,16 @@
     "type": "split",
     "children": [
       {
-        "id": "6f3663945a85c588",
+        "id": "4d707c4f3805c130",
         "type": "tabs",
         "children": [
           {
-            "id": "50a1d1316c7f13b1",
-            "type": "leaf",
-            "state": {
-              "type": "image",
-              "state": {
-                "file": "Images/second_filter.png"
-              }
-            }
-          },
-          {
-            "id": "b2ec9f36d51ad698",
+            "id": "c43ca02edd4eafdc",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-29 - (x).md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "4952cd14bcb9d10a",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2023-05-18 - Intro to CNN.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
-            "id": "c2c58bef84a7de31",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "2023-05-18 - Intro to CNN.md",
+                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
                 "mode": "source",
                 "source": false
               }
@@ -127,7 +93,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/second_filter.png",
+                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -144,7 +110,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/second_filter.png",
+                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -167,7 +133,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/second_filter.png"
+                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md"
               }
             }
           },
@@ -209,12 +175,12 @@
             "type": "tabs",
             "children": [
               {
-                "id": "51676116b90930c3",
+                "id": "70ff0f1103679f59",
                 "type": "leaf",
                 "state": {
                   "type": "markdown",
                   "state": {
-                    "file": "Digests/P2L4.md",
+                    "file": "Digests/P2L5.md",
                     "mode": "source",
                     "source": false
                   }
@@ -235,37 +201,38 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
-    "Images/conv_example.png",
-    "2023-05-22 - CNNs in depth, receptive field, stride & padding, pooling layers.md",
-    "Digests/P2L4.md",
-    "Images/example_LENet.png",
-    "2023-05-29 - (x).md",
+    "Images/AlexNet_stats.png",
     "2023-06-05 - (x) fuck ipcv.md",
-    "Images/strided_form.png",
-    "0padding.png",
-    "Images/zero_padding.png",
-    "2023-05-18 - Intro to CNN.md",
+    "Digests/P2L5.md",
     "2023-06-01 - (x) VGG, Inception, ResNet.md",
-    "Images/overall.png",
-    "Images/second_filter.png",
-    "Images/feature map.png",
+    "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
+    "Images/test_time_from.png",
+    "2023-05-18 - Intro to CNN.md",
+    "Digests/P2L4 - CNN.md",
+    "Images/ZFNET_clear.png",
+    "Images/ZFNET.png",
     "Digests/P1L5 - INSTANCE DETECTION.md",
+    "Digests/P1L4.md",
+    "Digests/P1L3 - EDGE DETECTORS.md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "Digests/P1L1 - IMAGES.md",
+    "Images/train_time_form.png",
+    "Images/bath_norm at training time.png",
+    "2023-05-22 - CNNs in depth, receptive field, stride & padding, pooling layers.md",
+    "Images/second_filter.png",
+    "Images/conv_example.png",
+    "Images/example_LENet.png",
+    "Images/strided_form.png",
+    "Images/0padding.png",
     "Digests/P2L3.md",
     "Digests/P2L2.md",
-    "Digests/P2L5.md",
     "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
     "Digests/P2L1.md",
-    "Images/final_HT.png",
-    "Images/AA.png",
-    "Digests/P1L4.md",
     "2023-04-03 - DoG, SIFT.md",
     "2023-03-27 - Invariances, Scale-space, Intro to DoG.md",
     "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
     "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
     "2023-02-27 - Solving correspondences, Lenses.md",
-    "Digests/P1L3 - EDGE DETECTORS.md",
-    "Digests/P1L2 - SPATIAL FILTERING.md",
-    "Digests/P1L1 - IMAGES.md",
     "2023-03-09 - Filters - Gaussian, Median and Bilateral.md",
     "2023-03-06 - Convolutions and Correlations.md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",

@@ -116,3 +116,5 @@ and verified the second one to perform slightly better.
 #### And the result is... OMG
 ![[alexnet_moment.png]]
 Residual blocks allow us to train deep networks. When properly trained, deep networks outperform shallower network as expected Won all 2015 competitions by a large margin, still the standard baseline/backbone for most tasks today.
+
+

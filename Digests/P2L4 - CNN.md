@@ -84,3 +84,45 @@ In CNNs
 The Dense part of the CNN has a global vision of the image.
 
 ----
+## Bitch-norm
+#### Internal Covariate Shift
+Deep architecture, even when using ReLUs, are too fucking _slow to train_.
+- This could be due to the __internal covariate shift__: the change in the _distribution_ of _network activations_ $h$, due to changes in _parameters_ during training.  
+
+__Batch-Norm__'s idea consists in _normalizing_ the output of a layer, so that each dimension of the _output_ has __zero-mean__ and __unit variance__.
+
+### Batch-Norm during training
+Given the formulas:
+![[train_time_form.png]]
+During training, the batch norm:
+- Input: a mini-batch of _activations_ $\{𝑎^{(𝑖)}| 𝑖 = 1, … , 𝐵\}$ where each sample has _dimension_ $D$.
+- It has 2D _learnable parameters_ $𝜸_𝒋$ and $𝜷_𝒋$, for each dimension $D$ ($j = 1,...,D$).
+- BN is comprised of 4 steps, all of them are _differentiable_ and can be _back-propagated through_: it guaranties that ==optimization does not “_undo_” _normalization_==.
+- At training time, we also keep a _running average_ of _mean_ and _variance_ ($𝛽 = 0.1$ is usually called __BN momentum__).
+- This is the running average:
+$$
+\begin{matrix}
+𝜇_𝑗^{(𝑡)} = (1 − 𝛽) 𝜇_𝑗^{(𝑡−1)} + 𝛽𝜇_𝑗 \\
+𝑣_𝑗^{(𝑡)} = (1 − 𝛽) 𝑣_𝑗^{(𝑡−1)} + 𝛽𝑣_j
+\end{matrix}
+$$
+### Batch-Norm at test time
+At test time, we do not want to depend on other items in the batch: we want the __output__ to _only depend_ on the __input__, ==deterministically==. 
+- So, in this case, $u_j$ and $v_j$ are __constants__, namely the final values of running averages at training time. 
+-  _BN becomes a deterministic linear transformation_. 
+![[test_time_from.png]]
+
+#### Pros & Cons of BN
+- Pros:
+	- high learning rates
+	- training is not determininstic: act as regularization.
+	- No overhead during test time: it can be fused with the previous layer
+- Cons:
+	- 0 explainability
+	- does not scale well with micro batches
+	- complex implementation (need to distinguish between training and testing)
+
+#### BN for CNNs
+In Batch norm for convolutional layers, we normalize along mini-batch and _spatial dimensions_ -> out activation has 4 dimensions:
+![[batch_norm_cnn.png]]
+It's this way so that elements of the same feature map are _normalized_ in the _same way_. 
