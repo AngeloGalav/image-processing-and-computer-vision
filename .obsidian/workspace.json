@@ -11,9 +11,19 @@
             "id": "c43ca02edd4eafdc",
             "type": "leaf",
             "state": {
+              "type": "image",
+              "state": {
+                "file": "Images/receptive_field_recap.png"
+              }
+            }
+          },
+          {
+            "id": "792f917f7e6a1b6f",
+            "type": "leaf",
+            "state": {
               "type": "markdown",
               "state": {
-                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
+                "file": "2023-06-01 - VGG, Inception, ResNet.md",
                 "mode": "source",
                 "source": false
               }
@@ -48,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "",
+                "query": "signal-to",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -93,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
+                "file": "Images/receptive_field_recap.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -110,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
+                "file": "Images/receptive_field_recap.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -133,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md"
+                "file": "Images/receptive_field_recap.png"
               }
             }
           },
@@ -201,42 +211,41 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
-    "Images/AlexNet_stats.png",
-    "2023-06-05 - (x) fuck ipcv.md",
-    "Digests/P2L5.md",
-    "2023-06-01 - (x) VGG, Inception, ResNet.md",
+    "Images/architecture.png",
+    "2023-06-01 - VGG, Inception, ResNet.md",
     "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
-    "Images/test_time_from.png",
-    "2023-05-18 - Intro to CNN.md",
-    "Digests/P2L4 - CNN.md",
-    "Images/ZFNET_clear.png",
-    "Images/ZFNET.png",
-    "Digests/P1L5 - INSTANCE DETECTION.md",
-    "Digests/P1L4.md",
-    "Digests/P1L3 - EDGE DETECTORS.md",
-    "Digests/P1L2 - SPATIAL FILTERING.md",
-    "Digests/P1L1 - IMAGES.md",
-    "Images/train_time_form.png",
-    "Images/bath_norm at training time.png",
-    "2023-05-22 - CNNs in depth, receptive field, stride & padding, pooling layers.md",
-    "Images/second_filter.png",
-    "Images/conv_example.png",
-    "Images/example_LENet.png",
-    "Images/strided_form.png",
-    "Images/0padding.png",
-    "Digests/P2L3.md",
+    "2023-06-05 - (x) fuck ipcv.md",
+    "MockQuestions/P2L2.md",
+    "MockQuestions/P1L5.md",
+    "MockQuestions/P1L4.md",
+    "MockQuestions/P1L3.md",
+    "MockQuestions/P1L2.md",
+    "MockQuestions/P1L1.md",
     "Digests/P2L2.md",
-    "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
     "Digests/P2L1.md",
+    "2023-05-08 - Homographies, Intro to image classification.md",
+    "2023-05-04 - Camera Calibration pt2 and Lens distortion.md",
+    "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
+    "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
+    "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
+    "Digests/P2L5.md",
     "2023-04-03 - DoG, SIFT.md",
     "2023-03-27 - Invariances, Scale-space, Intro to DoG.md",
-    "2023-03-13 - ED pt1, NMS, Canny's, Hysteresis.md",
     "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
-    "2023-02-27 - Solving correspondences, Lenses.md",
-    "2023-03-09 - Filters - Gaussian, Median and Bilateral.md",
-    "2023-03-06 - Convolutions and Correlations.md",
+    "Digests/P1L4.md",
     "2023-03-02 - Lenses 2, Camera Sensors.md",
-    "2023-02-20 - Quick Intro.md",
+    "Digests/P1L1 - IMAGES.md",
+    "Digests/P1L2 - SPATIAL FILTERING.md",
+    "Digests/P1L3 - EDGE DETECTORS.md",
+    "Images/receptive_field_recap.png",
+    "Images/vgg-16.png",
+    "Images/AlexNet_stats.png",
+    "Images/test_time_from.png",
+    "Images/ZFNET_clear.png",
+    "Images/ZFNET.png",
+    "Images/train_time_form.png",
+    "Images/bath_norm at training time.png",
+    "Images/second_filter.png",
     "MockQuestions",
     "Images/edge_detection_by_gradient_thresh.png.nWeXBd",
     "Digests",
