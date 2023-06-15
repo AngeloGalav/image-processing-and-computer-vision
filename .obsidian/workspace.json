@@ -13,7 +13,7 @@
             "state": {
               "type": "image",
               "state": {
-                "file": "Images/receptive_field_recap.png"
+                "file": "Images/senet.png"
               }
             }
           },
@@ -58,7 +58,7 @@
             "state": {
               "type": "search",
               "state": {
-                "query": "signal-to",
+                "query": "",
                 "matchingCase": false,
                 "explainSearch": false,
                 "collapseAll": false,
@@ -103,7 +103,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Images/receptive_field_recap.png",
+                "file": "Images/senet.png",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -120,7 +120,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Images/receptive_field_recap.png",
+                "file": "Images/senet.png",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -143,7 +143,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Images/receptive_field_recap.png"
+                "file": "Images/senet.png"
               }
             }
           },
@@ -211,10 +211,19 @@
   },
   "active": "41da8e61647e3eeb",
   "lastOpenFiles": [
+    "Images/depth-wise.png",
+    "2023-06-05 - Bottleneck ResBlock, ResNext, SE.md",
+    "Images/inverted_res.png",
+    "Digests/P2L5.md",
+    "Images/senet.png",
+    "Images/p3.png",
+    "Images/p2.png",
+    "Images/p1.png",
+    "Images/to_1b1_conv.png",
+    "Images/receptive_field_recap.png",
     "Images/architecture.png",
     "2023-06-01 - VGG, Inception, ResNet.md",
     "2023-05-29 - Batch-Norm, AlexNet, ZFNET.md",
-    "2023-06-05 - (x) fuck ipcv.md",
     "MockQuestions/P2L2.md",
     "MockQuestions/P1L5.md",
     "MockQuestions/P1L4.md",
@@ -228,7 +237,6 @@
     "2023-04-27 - PPM, handling lenses, intro to camera calibration.md",
     "2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space.md",
     "2023-04-17 - Instance Detection - ZCC, Shape Matching, Hugh Transform.md",
-    "Digests/P2L5.md",
     "2023-04-03 - DoG, SIFT.md",
     "2023-03-27 - Invariances, Scale-space, Intro to DoG.md",
     "2023-03-20 - ED pt2, Laplacian of Gaussian, Local Invariant feature, Harris corner.md",
@@ -237,15 +245,7 @@
     "Digests/P1L1 - IMAGES.md",
     "Digests/P1L2 - SPATIAL FILTERING.md",
     "Digests/P1L3 - EDGE DETECTORS.md",
-    "Images/receptive_field_recap.png",
     "Images/vgg-16.png",
-    "Images/AlexNet_stats.png",
-    "Images/test_time_from.png",
-    "Images/ZFNET_clear.png",
-    "Images/ZFNET.png",
-    "Images/train_time_form.png",
-    "Images/bath_norm at training time.png",
-    "Images/second_filter.png",
     "MockQuestions",
     "Images/edge_detection_by_gradient_thresh.png.nWeXBd",
     "Digests",
