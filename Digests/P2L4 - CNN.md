@@ -1,3 +1,5 @@
+## BoW
+## VLAD
 [..]
 
 ## CNNs

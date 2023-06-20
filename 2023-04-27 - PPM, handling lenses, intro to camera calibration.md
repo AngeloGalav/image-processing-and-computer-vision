@@ -131,7 +131,7 @@ In practice, it is difficult to build accurate targets containing multiple plane
 ## Zhang's step 1 - Acquire 𝑛 images of a planar pattern with 𝑚 internal corner
 ### Calibration pattern
 Given a chessboard pattern, we know: 
-- The _number of internal corners_ of the pattern, usually odd along one dimension and even along the other to _remove rotation ambiguities_.
+- The _number of internal corners_ of the pattern, usually __odd__ along one dimension and __even__ along the other to _remove rotation ambiguities_.
 	- (we want the patterns at the edges to be very different from each other). 
 - The _size of the squares_ that form the pattern (in mm, cm...)
 Internal corners can be detected easily by standard algorithms (e.g. the __Harris corner detector__)
@@ -172,9 +172,9 @@ Such a transformation, denoted here as $𝑯$, is known as __homography__ and re
 $𝑯$ can be thought of as a simplification of $𝑷$ in case the imaged object is planar.
 
 ## Estimating $𝐻_𝑖$ (DLT algorithm)
-Given the image of a pattern with $𝑚$ corners, we can write 3 linear equations for each corner $𝑗$ where: 
+Given the image of a pattern with $𝑚$ corners, _we can write 3 linear equations for each corner $𝑗$ where_: 
 - 3D coordinates are known due to the WRF definition 
-- 2D coordinates are known due to corners having been detected in the $i$-th image ◦
+- 2D coordinates are known due to corners having been detected in the $i$-th image
 - the unknowns are the 9 elements in $𝐻_i$
 
 There an would be $H_i$ for _each image_ ($n$). 
@@ -195,14 +195,14 @@ As we know, in projective space 2 points are equivalent they stay on the same li
 Given $𝑚$ corners, we can create a _homogeneous_, _overdetermined linear system of equations_:
 ![[bho.png]]
 
-In standard linear algebra, there's no solution to that (we can only compute solution if the matrix is squared/full rank). 
+In standard linear algebra, there's no solution to that (we can only compute solution if the matrix is squared/full rank) (trad. "rango completo"). 
 
 To avoid the trivial solution 𝒉 = 𝟎 we look for solutions with an additional constraint, e.g., $||𝒉|| = 1$.
 
 #### Singular Value Decomposition
 The solution $𝒉^∗$ is found by minimizing the norm of the vector $𝑳h$:
 ![[svd.png]]
-What I get is a solution ($h*$) that is not 0, but it will be close to it. -> my final point won't perfectly be on the line, but it will be close.  
+What I get is a solution ($h*$) so that $Lh$ is not 0, but _it will be close to it_. -> my final point won't perfectly be on the line, but it will be close.  
 
 It is known from linear algebra that the solution to such problem can be found via __Singular Value Decomposition__ of $𝐿$. In particular, the ==solution== is $𝒉^∗ = 𝒗_𝟗$, i.e., the last column of $V$:
 ![[svd_2.png]]

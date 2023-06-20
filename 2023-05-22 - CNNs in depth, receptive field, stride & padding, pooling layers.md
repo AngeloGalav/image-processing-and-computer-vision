@@ -19,7 +19,7 @@ In the general case, we compute $𝑪_{𝒐𝒖𝒕}$ convolutions between vecto
 
 ##### Non-linearity for CNNs
 We have seen that _convolutional layers_ can be interpreted as a constrained form of _linear layers_, [[2023-05-18 - Intro to CNN#Convolution as matrix multiplication|here]]. 
-Hence, they follow the same rule: to meaningfully compose them, we need to __insert non-linear activation__ functions between them
+Hence, they follow the same rule: to meaningfully compose them, we need to _insert_ __non-linear activation__ __functions__ between them.
 
 ## Relationship between spatial dimensions
 In general:
@@ -65,7 +65,7 @@ $$
 ##### Receptive field with stride S=2
 For the _very last layer_, _nothing changes_ (thats why we have $l-1$), meaning we dont have the stride in it. 
 ![[cnn1.png]]
-We need strides so that the receptive field can be big enough, without having to 
+We need strides so that the receptive field can be big enough, without having to add too many layers. 
 
 ##### An example
 ![[conv_example.png]]

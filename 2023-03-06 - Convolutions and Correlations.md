@@ -1,3 +1,4 @@
+# Spatial filtering
 ## Understanding Noise
 Noise appears in the image as random fluctuations of the actual values. 
 Noise changes continuosly, is not always constant obviously. I.e. noise at time $k=1$ is not the same as noise at time $k=10$. 
@@ -73,7 +74,7 @@ I'm just moving the kernel $(x,y)$
 #### Convolution and Correlation
 The correlation of $h$ w.r.t. $i$ is similar to convolution: the product of the two signals is integrated after translating $h$ _without reflection_.
 Hence, if h is an even function ($h(x,y) = h(−x, −y)$), the convolution between $i$ and $h$, $i ∗ h = h ∗ i$ , _is the same as the correlation_ of $h$ w.r.t. $i$.
-![[formulas_5.png]]
+![[correlation.png]]
 
 It is worth observing that _correlation is never commutative_, even if $h$ is an even function. 
 

@@ -89,7 +89,7 @@ __Edge-based template matching approach__
 We essentially use edges to define a shape, and the edges are then use to detect the shape in the target image. 
 From edges, we can exploit the _orientation_, and add the _orientation information_ to the control points.  
 
-- First, a set of _control points_, $P_k$, is extracted from the model image by an _Edge Detector_ and the _gradient direction_ at each $P_k$ is stored.
+- First, a set of _control points_, $P_k$, is extracted from the _model image_ by an _Edge Detector_ and the _gradient direction_ at each $P_k$ is stored.
 	- The Template composed by _offsets_ and _gradient directions_ 
 	- We don't use the magnitude, since it is very much influenced by the intensity difference. 
 
@@ -98,7 +98,7 @@ From edges, we can exploit the _orientation_, and add the _orientation informati
 - ==We do not perform edge detection on the target image, just on the template== \[why?\].
 ![[shape_based.png]]
 
-## Similarity Function
+### Similarity Function
 ![[unit_vector.png]]
 The resulting similarity function is:
 ![[similarity_function.png]]
@@ -146,13 +146,13 @@ Therefore, given a sought analytic shape represented by a set of parameters, the
 _Intersections_ of parameter space curves indicate the presence of _image points_ related to an _instance_ of the desired shape:
 - the more the _intersecting curves_ the more are such image points and thus the higher is the evidence of the _presence of that instance_ in the image. 
 
-_Detecting objects_ through the HT consists in _finding parameter space_ points through which many curves do intersect (a local rather than global detection problem).
+==_Detecting objects_ through the HT consists in _finding parameter space_ points through which many curves do intersect== (a local rather than global detection problem).
 
-To make it work in practice, the parameter space needs to be _quantized_ and allocated as a , which is often refereed to as __Accumulator Array (AA)__ 
+To make it work in practice, the parameter space needs to be _quantized_ and allocated as a memory array, which is often refereed to as __Accumulator Array (AA)__ 
 - Curves are “drawn” into the AA by a so called ___voting process___: 
 	1. the _transform equation_ is repeatedly computed to increment the bins _satisfying the equation_. 
 	2. a _high number of intersecting curves_ at a point of the parameter space will provide a _high number of votes_ into a bin of the AA.
-	3. Finding parameter space points through which many curves do intersect is thus implemented in practice by finding peaks of the AA, i.e. local maxima showing a high number of votes.
+	3. Finding parameter space points through which many curves do intersect is thus implemented in practice by finding _peaks_ of the AA, i.e. local maxima showing a high number of votes.
 
 ![[AA.png]]
 To detect the line _more accurately_, the AA should be _quantized more finely_.

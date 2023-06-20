@@ -14,7 +14,7 @@ Can be caused by either:
 
 This type of noise is an asshole, since a filtering operation (such as mean filtering) causes these intensities to be _spread out_ on the whole image. 
 
-### Gaussian filter
+## Gaussian filter
 LTE operator whose impulse response is a 2D Gaussian function (with zero mean and constant diagonal covariance matrix). 
 
 This type of filter gives _higher weights to the closer pixels_, while giving lower weights to the further away pixels. 
@@ -40,7 +40,7 @@ To this purpose, we can observe that:
 	- as the interval $[−3\sigma, +3\sigma]$ captures 99% of the area (“energy”) of the Gaussian function, a typical rule-of-thumb dictates taking a $(2k + 1)×(2k + 1)$ _kernel_ with $k = \lceil 3\sigma \rceil$.
 ![[Gaussian_kernel.png]]
 
-## Deploying Separability
+### Deploying Separability
 To further speed-up the filtering operation, one can deploy the __separability property__ of Gaussian: due to the _2D Gaussian_ being the product of _two 1D Gaussians_, the original _2D convolution can be split into the chain of two 1D convolutions_, i.e. either along $x$ first and then along $y$, or viceversa.
 ![[deploy.png]]
 
@@ -58,6 +58,7 @@ So we combine the 2 filters.
 Advanced non-linear filter to accomplish _denoising of Gaussian-like noise_ without blurring the image (aka _edge preserving_ smoothing)
 ![[window_bilateral.png]]
 ![[output_bilateral.png]]
+[the image is wrong: it should be inverted -> s depends on spatial distance, r on pixel intensity]
 In particular:
 ![[formulas_expanded.png]]
 

@@ -6,7 +6,7 @@ If the circle of confusion is contained within a single pixel, the image on that
 - The _range of distances_ across which the _image appears on focus_ - due to blur circles being small enough - determines the __DOF (Depth of Field) of the imaging apparatus__. 
 - The diaphragm controls the amount of light that I'm letting through the camera. 
 	- Large hole -> larger cones (large blur circle)
-	-  Small hole -> small cone (small blur circle)
+	- Small hole -> small cone (small blur circle)
 
 - Cameras often deploy an adjustable diaphragm (iris) to control the amount of light gathered through the effective aperture of the lens. 
 - We close the diaphragm => increase depth of field => not enough light => increase exposure time => moving object => motion blur => still scenes

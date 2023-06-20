@@ -30,7 +30,7 @@ By varying $k$, the word also varies.
 If we used CNNs, we could have also used the color of the patches as information. 
 
 ## 3. Encode training images and new images
-Given an image, the _same extraction pipeline_ used to create the codebook (e.g. regular grid + SIFT description of patches) is applied to it. Each extracted descriptor/patch is matched against the codebook and assigned to the nearest centroid in the codebook. 
+Given an image, the _same extraction pipeline_ used to create the _codebook_ (e.g. regular grid + SIFT description of patches) is applied to it. Each extracted descriptor/patch is _matched_ against the codebook and assigned to the _nearest centroid_ in the codebook. 
 In vanilla BoVW, the histogram entry corresponding to such codeword is _incremented_.
 
 The BOW representation, for a long time, has been 
@@ -42,11 +42,11 @@ Note that we obtain a fixed-size representation out of varying input sizes. We a
 ![[train_classifier.png]]
 
 ## VLAD: vector of locally aggregated descriptors
-Successful evolutions of BoW focused on making the assignment to a codeword more informative. If descriptors are $𝐷$ dimensional (e.g. 128 when using SIFT), and there are $𝐾$ codewords, VLAD creates a $𝐷 × 𝐾$ descriptor which stores the differences of input words with respect to the codewords, i.e their relative position with respect to the codeword.
+Successful evolutions of BoW focused on making the assignment to a codeword more informative. If descriptors are $𝐷$ dimensional (e.g. 128 when using SIFT), and there are $𝐾$ codewords, VLAD creates a $𝐷 × 𝐾$ descriptor which _stores the differences_ of input words with respect to the codewords, i.e their relative position with respect to the codeword.
 ![[vlad.png]]
 In particular, the position of the patch is measured wrt to the code word in the patch/SIFT descriptor space. This differences are then taken into account inside the data structure. 
 
-As we can see, we don't have histograms anymore since we can have negative values now (i.e. if a codeword is on the left or the right of a centroid in the sift space).
+As we can see, we don't have histograms anymore since we can have negative values now (i.e. if a codeword is on the left or the right of a centroid in the SIFT space).
 
 #### BOVW was the dominant paradigm until 2012
 ImageNet initially was made to be very easy to use with BoW approach -> they made a vocalubary of 1000 codewords running k-means on 1 million SIFT descriptors. 
@@ -126,11 +126,15 @@ Which is basically this in a figurative sense:
 Like 𝑘-NN classifiers, neural networks enjoy a form of _universal approximation property_: neural networks with a single hidden layer can be used to approximate any continuous function to any desired precision. For instance, they can solve XOR.
 
 ### Depth as an exponential gain
-If one hidden layer is enough, why using more than one? For instance, XOR can be seen as the special case with only two inputs of a function called parity. In the worst case, which happens for the parity function, the number of hidden units grows exponentially with the input dimensions (it requires one hidden unit corresponding to each input configuration that needs to be distinguished). If more hidden layers are used, instead, a _linear_ number of neurons wrt the input size can learn parity. Well, maybe…
+If one hidden layer is enough, why using more than one? For instance, XOR can be seen as the special case with only two inputs of a function called parity.
 
-## Vertical edge detection with FC layer
-In traditional image processing and computer vision, we usually rely on _convolution/correlation_ with hand-crafted filters (kernels) to process images (e.g. denoise or detect local features). 
-- Unlike linear layers, in a convolution, the input and output are _not flattened_, i.e. convolution preserves the spatial structure of images. 
+In the worst case, which happens for the parity function, the number of hidden units grows exponentially with the input dimensions (it requires one hidden unit corresponding to each input configuration that needs to be distinguished).
+
+If more hidden layers are used, instead, a _linear_ number of neurons wrt the input size can learn parity. Well, maybe…
+
+## Vertical edge detection with FC layer - Convolutions
+In traditional image processing and computer vision, we usually rely on _convolution/correlation_ with hand-crafted filters (kernels) to _process images_ (e.g. denoise or detect local features). 
+- Unlike linear layers, in a convolution, the input and output are _not flattened_, i.e. <u>convolutions preserves the spatial structure of images</u>. 
 - Unlike linear layers, a convolution _processes_ only a – small – _set of neighboring pixels_ at each location. In other words, each output unit is connected only to _local input units_. This realizes a so called __local receptive field__. 
 - Unlike linear layers, _the parameters_ associated with the connections between an output unit and its input neighbors _are the same for all output units_. Thus, _parameters are said to be shared_ and the convolution seamlessly learns the same detector, regardless of the input position. Convolutions embody inductive biases dealing with the structure of images: images exhibit informative local patterns that may appear everywhere across an image.
 

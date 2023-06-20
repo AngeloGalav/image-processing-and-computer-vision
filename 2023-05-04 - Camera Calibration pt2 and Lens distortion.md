@@ -2,7 +2,7 @@
 ### What error should we minimize?
 ![[optmiizi_h.png]]
 When finding the homography $H$, we wanted to find an H that optimizing on top of $\tilde w_j$. 
-We are not getting a perfect H, since we are finding it in LSQ sense and we're neglecting the lens distortion. And most definetly, we are not going to find it using a simple linear model. 
+We are not getting a perfect H, since we are finding it in LSQ sense and we're neglecting the lens distortion. And most definitely, we are not going to find it using a simple linear model. 
 Our $\tilde w_j$ will map something close to $m_j$, but it is not quite the exact value yet.
 
 There's another problem though:
@@ -15,24 +15,24 @@ But, the notation is done like this in order to make it clear that we are in the
 We can try to improve $H$ by making this distance (between $H_iw_j$ and $m_j$) as short as possible -> We want to minimize $||m_j - H_iw_j||$. 
 - By solving [[2023-04-27 - PPM, handling lenses, intro to camera calibration#Estimating $𝐻_𝑖$ (DLT algorithm)|the linear system of equation]], we are trying to minimize the _algebraic error_, while when we are minimizing $||m_j - H_iw_j||$ we are minimizing the _geometric error_.
 
-##### In short...
+##### In short... (Non-linear refinement)
 Given the initial guess for $𝑯_𝒊$ , we can refine it by a non-linear minimization problem:
 ![[refinement_H.png]]
 which can be solved for by using an iterative algorithm, like the Levenberg-Marquardt algorithm (similar to SGD). 
-This additional optimization step corresponds to the minimization of the reprojection error (typically referred to as geometric error) measured for each of the 3D corners of the pattern by comparing the _pixel coordinates predicted by the estimated homography_ to the _pixel coordinates_ of the corresponding corner extracted in the image ($m_j$). 
+This additional optimization step corresponds to the minimization of the reprojection error (typically referred to as __geometric error__) measured for each of the 3D corners of the pattern by _comparing_ the _pixel coordinates_ predicted by the _estimated homography_ to the _pixel coordinates_ of the _corresponding corner_ extracted _in the image_ ($m_j$). 
 
 The error minimized to estimate the initial guess when solving the linear system is instead referred to as _algebraic error_ or distance. Solutions based on minimization of the algebraic error may not be aligned with our intuition, yet there exist a unique solution, which is cheap to compute. Hence, they are a good starting point for a geometric, non-linear minimization, which effectively minimize the distance we care about.
 
 >[!approfondimento]
 >Why are we doing the 2-step error minimization (algebraic + geometric) instead of just using the geomtric minization?
 > This is because iterative methods are very sensistive to initial parameter values (i.e. the first parameter of the iteration) etc...
-> - The algebraic error serves to find a good initial guess essentially.  
+> - The algebraic error aims to find a good initial guess essentially.  
 
 ## Zhang's Method 4 -> Estimation of the intrinsic parameters (initial guess of A)
 Up to now, if we got $n$ images we have computed an homography between the world pattern and the pattern between the $i$ images. Why can't we stop right now?
 
 With calibration, we want to estimate _perspective projection matrix_ and _the parameters_ (intrisinc and extrinsic).
-- The $H$ (homography) projection matrix is very close to the perspective projection matrix, we just need another to find $P$ from $H$.
+- The $H$ (homography) projection matrix is very close to the perspective projection matrix, we just need another column to find $P$ from $H$.
 
 To get the 4th column, we need $A$, which is an _intrisic parameter_. But all images acquired for calibration (if taken with the same camera) share the same _intrinsic parameters_.  
 
@@ -78,7 +78,7 @@ However, SVD of $𝑹_𝒊$ allows _to find the closest orthonormal matrix to it
 (Compute an initial guess for distortion parameters $𝑘$ and $p$.)
 
 So far, we have neglected lens distortion and calibrated a _pure pinhole model_.
-The coordinates predicted by the homographies starting from points in the WRFs correspond to the _ideal_ (undistorted) _pixel coordinates_ of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$. The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
+==The coordinates predicted by the homographies starting from points in the WRFs correspond to the _ideal_ (undistorted) _pixel coordinates_ of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$.== The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
 
 The Original Zhang's model only takes into account the _radial distortion_, and estimates coefficients $𝑘_1$ , $𝑘_2$ of the radial distortion function:
 ![[radial_dist.png]]
@@ -172,7 +172,7 @@ What happens in practice is that I make the _pixel intensity_ to be _as much as 
 
 ### "Undistort" warping
 Once the lens distortion parameters have been computed by camera calibration, the image can be corrected by a _backward warp_ from the _undistorted_ to the _distorted image_ based on the adopted lens distortion model. 
-- However, to the backward warping, we need a __backward map__. _Zhang's Radial distortion model_ provides this backward mapping since it goes from the undistorted coordinates( $u_{undist}$) to the distorted one ($u$). 
+- However, to do the backward warping, we need a __backward map__. _Zhang's Radial distortion model_ provides this backward mapping since it goes from the undistorted coordinates( $u_{undist}$) to the distorted one ($u$). 
 
 For this images, the image formation model is linear, i.e. the PPM.
 ![[undistort.png]]

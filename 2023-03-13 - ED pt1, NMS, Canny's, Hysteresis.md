@@ -76,7 +76,7 @@ In short:
 - __Prewitt__ -> approximate partial derivatives by _central differences_ of the mean (Prewitt operator)
 	- - i.e. $\micro(i, j+1) - \micro(i, j-1)$
 
-## Edges Detection
+## Edges Detection through threshold
 -  Detecting edges by __gradient thresholding__ is inherently inaccurate: 
 	- It is difficult to choose the right threshold 
 	- the image contains meaningful edges characterized by different contrast (i.e. “stronger” as well as “weaker”) 

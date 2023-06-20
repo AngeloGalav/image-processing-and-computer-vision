@@ -33,7 +33,7 @@ The parameters are the weights and biases of our model basically.
 ## 0-1 loss
 Can the loss function be the number of errors? ($𝑳 = \#𝒆𝒓𝒓𝒐𝒓𝒔$?)
 ![[01loss.png]]
-This choice, known as the 0-1 loss, results in a hard optimization problem. Given the classifier represented by the solid line, changing it to become the dashed or the dotted line produces the same number of errors: $\#errors$ is insensitive to small (and even large, sometimes) changes of the parameters. However, they are not equivalent directions of change: if we keep moving the classifier in the direction of the dotted line, we will improve it; whereas, if we keep moving in the direction of the dashed one, we will make more errors: the error rate does not tell us if we are “moving” in the “right” direction while we change the parameters.
+This choice, known as the 0-1 loss, results in a hard optimization problem. Given the classifier represented by the solid line, changing it to become the dashed or the dotted line produces the same number of errors: $\#errors$ is insensitive to small (and even large, sometimes) changes of the parameters. However, they are not equivalent directions of change: if we keep moving the classifier in the direction of the dotted line, we will improve it; whereas, if we keep moving in the direction of the dashed one, we will make more errors: ==the error rate does not tell us if we are “moving” in the “right” direction while we change the parameters==.
 
 ## Loss function
 Instead of directly optimizing accuracy, we then usually optimize a _proxy measure_, the _loss function_, that is easier to optimize but still correlated with how good our classifier is.
@@ -114,6 +114,8 @@ $$
 		- _Exact_, but _slow, tedious_, and error prone.
 
 - __Automatically__, by automatic differentiation, e.g. with the _backpropagation algorithm_.
+
+[end]
 
 ## What does a linear model learn?
 The accuracy of the model is again pretty low, about 38%.

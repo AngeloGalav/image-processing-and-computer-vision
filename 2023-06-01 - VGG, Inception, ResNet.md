@@ -3,7 +3,7 @@
 ![[architecture.png]]
 (in this picure, each column with a net represents a variant, i.e. VGG-16 is column D)
 
-Commit to explore the effectiveness of simple design choices, by allowing only the combination of : 
+Commit to explore the effectiveness of _simple design choices_, by allowing only the combination of : 
 - 3x3 convolutions, S=1, P=1 
 - 2x2 max-pooling, S=2, P=0 
 	- $n_{channels}$ _doubles_ after each pool (aside from the last layer, otherwise there would be too many channels, like 1024!)
@@ -92,11 +92,13 @@ A lot of gain in terms of FLOPS!
 (i.e. from 240M flops to 25M flops in 5x5 convs)
 ==In short, 1x1 convolutions are the cheapest way to _decrease the number of channels_.== 
 
-### Getting rid of the fully-connected layer at the end (Fully-connected classifier vs global average pooling)
+### Getting rid of some fully-connected layers at the end (Fully-connected classifier vs global average pooling)
 
 ![[w_agv.png]]
 
-To reduce the number of parameters needed at the interface between convolutional features and fully connected layers, they proposed to get _rid of spatial dimensions_ by ___averaging__ them out_. 
+To reduce the number of parameters needed at the interface between convolutional features and fully connected layers, they proposed to get _rid of determined spatial dimensions_ by ___averaging__ them out_ (the specific spatial dimenions). 
+
+#### Global average pooling
 - GoogLeNet uses global average pooling to remove spatial dimensions and one FC layer to produce class scores.
 - This results in only 1 million parameteres and a negligible number of flop. 
 

@@ -39,7 +39,7 @@ At test time:
 - It has 2D _learnable parameters_ $𝜸_𝒋$ and $𝜷_𝒋$, for each dimension $D$ ($j = 1,...,D$).
 
 But also...
-At test time, we do not want to stochastically _depend_ on the _other items_ in the mini-batch: we want the _output to depend only on the input_, __deterministically__.  D
+At test time, we do not want to stochastically _depend_ on the _other items_ in the mini-batch: we want the _output to depend only on the input_, __deterministically__.  
 
 Mean and variance become _two constant_ values, the _final values_ of the __running averages__ computed at _training time_.
 
@@ -63,7 +63,7 @@ __Cons__
 - Does not scale down to “_micro-batches_”
 ![[bn.png]]
 
-## Batch Norm for convolutional layers
+## Batch Norm for convolutional layers (BatchNorm2D)
 In Batch norm for _convolutional layers_, we normalize along mini-batch and _spatial dimensions_ -> out activation has 4 dimensions:
 ![[batch_norm_cnn.png]]
 Why? The idea is to respect how _convolutional layers work_: elements of the same feature map are normalized in the same way.
@@ -156,6 +156,7 @@ _More than 60 million parameters learned, more than 290 Gflops to process a mini
 __ZFNET__ tries to reduce the “_trial and error_” approach to network design, by introducing _powerful visualizations_ (via Deconvnets) for layers other than the first one. 
 
 ##### The Stem layer changes from AlexNet!!
-Based on the visualizations and ablation studies, they found out that _aggressive stride_ and _large filter size_ in the _first layer_ results in __dead filters__ and missing frequencies in the first layer filters and aliasing artifacts in the second layer activations.
+Based on the visualizations and ablation studies, they found out that _aggressive stride_ and _large filter size_ in the _first layer_ results in __dead filters__ and missing frequencies in the first layer filters and aliasing artifacts in the second layer activatio
+- If using momentum, we will have a velocity term for each parameter, if using Adam first and second order moments for each parameter, etc.. ns.
 
 They propose to counteract these problems by using $𝟕 × 𝟕$ convs with _stride 2_ in the first layer and _stride 2_ also in the second $𝟓 × 𝟓$ conv layer.

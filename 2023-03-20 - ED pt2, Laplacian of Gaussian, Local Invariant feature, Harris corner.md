@@ -17,7 +17,6 @@ Computing the second derivative along the gradient turns out very expensive. In 
 
 ##### Discrete Laplacian
 To approximate the calculation, instead, we can use _differences on differences_ (since the first derivative is already approximated through differences).  
-- 
 - One can use _forward_ and _backward_ differences to approximate first and second order derivatives, respectively:
 
 ![[difference_on_difference.png]]

@@ -74,7 +74,7 @@ In order to solve it, we must compute suitable _combinations_ of _scale-normaliz
 
 - As we filter more (_higher sigma_), derivatives tends to become _weaker_. To compensate Lindberg proposes to _multiply/normalize_ derivatives by _sigma_ (scale-normalized) 
 
-- We have stacked images => we look for extrema in a 3D space (pixel positions as well as scale)
+- We have stacked images => we look for _extrema in a 3D space_ (pixel positions as well as scale)
 
 ### Scale-normalized Laplacian of Gaussian (LOG)
 Scale-normalized Laplacian of Gaussian (LOG):
