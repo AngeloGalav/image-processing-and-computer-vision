@@ -8,7 +8,7 @@ This kind of noise is basically made of pixel have very different intensities w.
 ![[salt_pepper.png]]
 Can be caused by either:
 - _Physical damage_ to sensor
-- Signal transmassing error. 
+- Signal transmission error. 
 - Disparity maps: we compare the distance to every point of this region.  
 	- If we are comparing two different images, we'll get the salt and pepper noise on the disparity map.  
 
@@ -22,10 +22,11 @@ This type of filter gives _higher weights to the closer pixels_, while giving lo
 
 The higher $\sigma$, the stronger the smoothing caused by the filter. This can be understood, e.g., by observing that ==as $\sigma$ increases, the weights of closer points get smaller while those of farther points get larger==.
 ![[gaussian_artifacts.png]]
-As $\sigma$ gets larger, _small details disappear_ and the image content deals with larger size structures. Thus, filtering with a chosen $\sigma$ can be thought of as setting the “scale” of interest to analyse image content.
+As $\sigma$ gets larger, _small details disappear_ and the image content deals with larger size structures. Thus, filtering with a chosen $\sigma$ can be thought of as _setting the “scale”_ of interest to analyse image content.
 
 >[!Information]
->In CV, Gaussian fillters are used to create a _scaled space_, which is a space in which we define the scale at which we want to analyze our image, so it like seeing the image at a different scale.
+>In CV, Gaussian fillters are used to create a _scale space_, which is a space in which we define the scale at which we want to analyze our image, so it like seeing the image at a different scale.
+> - Many gaussian filters with a different $\sigma$ are applied to the input image, obtaining the scale space. This creates many images at different degrees of blurriness (different scales, aka levels of details), allowing for the analysis of image structures at various sizes. 
 > - To extract features, we try to find the _scale invariant features_. Gaussian filters allow us to create a scaled space to extract these features. 
 
 The discrete Gaussian kernel can be obtained _by sampling the corresponding continuous function_, which is however of infinite extent. A finite size must therefore be properly chosen.
@@ -64,7 +65,7 @@ In particular:
 
 The _kernel_ $H$ is the multiplication of those two function. $s$ stands for _spatial_, $r$ stands for _range_.
 
-This Gaussian is gonna be high when the pixels have a similar intensity and they are near each other. In that case, the weight of the kernel is also gonna be high, thus the contribution of kernel overall is gonna be high on that pixel. 
+==This Gaussian is gonna be high when the pixels have a similar intensity and they are near each other==. In that case, the weight of the kernel is also gonna be high, thus the contribution of kernel overall is gonna be high on that pixel. 
 
 _Normalization Factor_ (Unity Gain):
 $$W(p) = \sum_{q \in s} G_{\sigma_{s}} (d_s(p,q)) G_{\sigma_{r}} (d_r(p,q))$$
@@ -77,6 +78,8 @@ $$W(p) = \sum_{q \in s} G_{\sigma_{s}} (d_s(p,q)) G_{\sigma_{r}} (d_r(p,q))$$
 - At a pixel nearby an edge, the neighbours falling on the other side of the edge look quite different and thus cannot contribute significantly to the output value _due to their weights being small_.
 	- They are small because the intensity is different and they are far. 
 
+>[!WARNING]
+>A limitation of this filter is that __it cannot filter out Impulse Noise__!
 ### Non-local Means Filter
 Another well-known non-linear edge preserving smoothing filter. The key idea is that the _similarity among patches_ spread over the image can be _distributed_ to _achieve denoising_.
 ![[non_local_means.png]]

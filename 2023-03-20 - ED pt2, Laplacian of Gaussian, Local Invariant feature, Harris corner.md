@@ -47,7 +47,7 @@ Practical implementations of the LOG may deploy the properties of convolutions t
 
 ![[log_examples.png]]
 
-Unlike those based on smooth derivatives, ==the LOG edge detector allows the degree of smoothing to be controlled== (i.e. by changing the $σ$ parameter of the Gaussian filter). 
+Unlike those based on smooth derivatigative LoG Value (Brighter Side of the ves, ==the LOG edge detector allows the degree of smoothing to be controlled== (i.e. by changing the $σ$ parameter of the Gaussian filter). 
 - This, in turn, allows _the edge detector_ to be tuned according to the _degree of noise_ in the image (i.e. higher noise -> larger $σ$) 
 
 Likewise, $σ$ may be used to control the scale at which the _image is analyzed_, with larger $σ$ typically chosen to extract the edges related to main scene structures and smaller $σ$ to capture small size details.
@@ -129,5 +129,10 @@ We just compute the eigenvalues of $M$.
 Since we would need to compute _eigenvalues_ at each pixel would be costly, 
 we compute a more efficient “_cornerness_” function: 
 ![[corenerness_function.png]]
+
+The variable $k$ is a _sensitivity factor_ that is used to balance the importance of the trace and the determinant of the matrix $M$ when calculating the corner response. It is a constant that must be chosen carefully; 
+- if it's too small, too many features are detected as corners
+- if it's too large, too few are detected.
+
 Analysis of the above function would show that:
 ![[C_values.png]]

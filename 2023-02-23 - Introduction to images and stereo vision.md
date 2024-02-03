@@ -76,7 +76,7 @@ A CV algorithm should be __scale-unbiased__ (scale-invariance?), meaning that is
 
 The image formation process deals with mapping a 3D space onto a 2D space => _loss of information_.
 
-The mapping is not a _bijection_: a given scene point is mapped into a unique image point 
+The mapping is not a _bijection_: a given scene point is not mapped into a unique image point 
 - a given _image point_ is mapped onto a _3D line_ (i.e. the line through the point, $m$, and the optical centre, $C$).
 
 You cannot reconstruct from a 2D image a 3D scene: recovering the 3D structure of a scene from a single image is an __ill-posed problem__ (the solution is not unique).
@@ -105,13 +105,13 @@ __Assumptions__:
 
 ![[stereo_vision3.png]]
 
-The transformation between the two reference frames is just a __translation__ ($b$), usually horizontal. $b$ is also called a _baseline_.
+The transformation between the two reference frames is just a __traslation__ ($b$), usually horizontal. $b$ is also called a _baseline_ and it's the _difference between the 2 optical centers_.
  
 ![[translation_baseline.png]]
 $P_L$ and $P_R$ are two (correspondent) points on the left camera system and the right camera system respectively. 
 
 There are a couple of issues though:
-- No perfect alignment in depth in the real world. 
+- _No perfect alignment in depth_ in the real world. 
 - You need to sense two images at the __very same moment__. 
 - You can put the two cameras “as you want” but they must observe the same object. 
 

@@ -6,7 +6,7 @@ In machine vision, edge detection is key to measurement tools.
 ![[edges 1.png]]
 
 - _Sharp_ change of a 1D signal (1D step-edge)
-	- In the transition region between the two constant levels the absolute value of the first derivative gets high (and reaches an _extremum_ at the _inflection point_)
+	- In the transition region between the two constant levels the absolute value of thte first derivative gets high (and reaches an _extremum_ at the _inflection point_)
 	- The simplest edge-detection operator relies on thresholding the absolute value of the derivative of the signal
 		- _Derivatives_ are the best tools so far to _compute edges_. 
 
@@ -14,7 +14,7 @@ In machine vision, edge detection is key to measurement tools.
 
 We use the absolute value since if we go from high intensity to low intensity, the derivative is negative, but the edge is still there lool. 
 
-## Edge detection
+## Direction in edge detection
 A 2D Step-Edge is characterized not only by its strength but also its _direction_:
 ![[edge_detection.png]]
 
@@ -104,7 +104,7 @@ Now, as we've said, we need to look also along the gradient direction. Problem i
 So, the direction has to be estimated locally (based on _gradient’s direction_). 
 To find the direction of the gradient, we need to find the _maximum variation_ of the gradient. 
 
-### Compute the direction of the gradient
+### Discrete NMS
 ![[nms_suppresion.png]]
 In this example, we are discretizing the gradient. 
 So, we select the _closest point_ to A and B, $(i-1, j+1)$ and $(i+1,j-1)$ respectively (aka the points circled in blue). 
@@ -129,8 +129,6 @@ He proposed the following three criteria:
 - __Good Localization__: the _distance_ between the _found edge_ and the _“true” edge_ should be minimum.
 - __One Response to One Edge__: the filter should detect _one single edge pixel_ at each “true” edge (no multiple pixels for the same edge).
 
-Also, we want sharp edges! No thick edges!!
-
 Addressing the 1D case and modeling an edge as a noisy step, Canny shows that the _optimal edge detection operation_ consists in finding ==_local extrema_ of the _convolution_ of the _signal_ by a first order _Gaussian derivative_== (i.e. $G’(x)$).
 - aka, __local extrema__ convoluted by a __Gaussian derivative__. 
 
@@ -144,14 +142,14 @@ We use Gaussians & Convolutions to exploit both [[2023-03-09 - Filters - Gaussia
 ![[Gaussian_sep.png]]
 We can use the two partial derivatives to compute the gradient. 
 
-### Canny’s Edge Detector Threshold
+### __HYSTERESIS__ In Canny’s Edge Detector
 NMS is often followed by _thresholding_ of gradient magnitude to help distinguish between true “_semantic_” edges and _unwanted_ ones.
 ![[camnny_fuck_uyou.png]]
 
 Edge streaking (narrowing) may occur when magnitude varies along object contours, which also may be caused by a too high threshold. 
 
 To solve this, Canny proposed a “__hysteresis__” thresholding approach relying on a _higher_ ($T_h$) and a _lower_ ($T_l$) threshold.
-- A pixel is taken as an edge if either the gradient magnitude is _higher_ than $T_h$ __OR__ _higher_ than $T_l$ AND the pixel is a _neighbor_ of an already detected edge.
+- A pixel is taken as an edge if either the gradient magnitude is _higher_ than $T_h$, __OR__ _higher_ than $T_l$ AND the pixel is a _neighbor_ of an already detected edge.
 
 Hysteresis thresholding is usually carried out by tracking edge pixels along contours
 ![[hysteresis.png]]

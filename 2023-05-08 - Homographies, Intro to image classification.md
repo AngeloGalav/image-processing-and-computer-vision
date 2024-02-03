@@ -76,7 +76,7 @@ What is the accuracy on the training data of the classifier on the right, with $
 
 ### Model capacity
 By changing $𝑘$, we change the _model capacity_ of the classifier.
-Informally, we can think of the model capacity as the measure of _how complex/flexible the functions_ that can be learned are. $𝑘 = 1$ gives the model with the largest capacity, which can perfectly classify any (training) dataset. 
+Informally, we can think of the model capacity as the measure of _how complex/flexible the functions_ that can be learned are. $𝑘 = 1$ gives the model with the __largest__ capacity, which can perfectly classify any (training) dataset. 
 By _growing_ $𝑘$, we _reduce the capacity_: decision boundaries between classes become smoother and we _misclassify more_ and more points of the training set. Why shall we want to do it?
 - Because... 
 ![[model_capacity.png]]

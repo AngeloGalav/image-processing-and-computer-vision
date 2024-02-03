@@ -66,7 +66,7 @@ It is not so different from the standard representation.
 ![[linclass2.png]]
 
 #### Gradients of activation functions
-Gradients play a central role in optimization. Gradient of the output of activation functions with respect to input is very different between sigmoid and ReLU, easier to train (deep) networks when using ReLU. Yet, ReLu can give rise to “dead” neurons, if for all inputs the output is negative.
+Gradients play a central role in optimization. Gradient of the output of activation functions with respect to input is very different between sigmoid and ReLU, easier to train (deep) networks when using ReLU. Yet, ReLu can give rise to “_dead_” neurons, if for all inputs _the output is negative_.
 ![[linclass3.png]]
 
 In the past, a lot of care was put in the initialization of the tensor, to that the CNN would start on the linear part of the Sigmoid (the center part more or less). 
@@ -132,17 +132,15 @@ In the worst case, which happens for the parity function, the number of hidden u
 
 If more hidden layers are used, instead, a _linear_ number of neurons wrt the input size can learn parity. Well, maybe…
 
-## Vertical edge detection with FC layer - Convolutions
+## Convolutions - Vertical edge detection with FC layer
 In traditional image processing and computer vision, we usually rely on _convolution/correlation_ with hand-crafted filters (kernels) to _process images_ (e.g. denoise or detect local features). 
 - Unlike linear layers, in a convolution, the input and output are _not flattened_, i.e. <u>convolutions preserves the spatial structure of images</u>. 
 - Unlike linear layers, a convolution _processes_ only a – small – _set of neighboring pixels_ at each location. In other words, each output unit is connected only to _local input units_. This realizes a so called __local receptive field__. 
-- Unlike linear layers, _the parameters_ associated with the connections between an output unit and its input neighbors _are the same for all output units_. Thus, _parameters are said to be shared_ and the convolution seamlessly learns the same detector, regardless of the input position. Convolutions embody inductive biases dealing with the structure of images: images exhibit informative local patterns that may appear everywhere across an image.
+- Unlike linear layers, _the parameters_ associated with the connections between an output unit and its input neighbors _are the same for all output units_. Thus, _parameters are said to be shared_ and the convolution seamlessly learns the same detector, regardless of the input position. Convolutions embody __inductive biases__ dealing with the structure of images: images exhibit _informative local patterns_ that may appear everywhere across an image.
 
-I want our NN to do this:
-![[difference.png]]
-
+###### mini rant on edge detection using CNNs
 Since our convolution only needs to learns only 2 parameters in the best case in the case of edge detection (which are [-1, 1]), and allows us to skip many computation. 
-Does this mean that CNNs are more powerful than strandard NNs? NO! Rather, they are less powerful since they only work well with a specific type of data.  
+Does this mean that CNNs are more powerful than strandard NNs? _NO_! Rather, _they are less powerful_ since they only work well with a specific type of data.  
 
 ### Correlation or convolution?
 In standard convolutions, we would _flip the kernel_. Nobody does this, so what we're actually applying a cross-correlation, however we still call it convolution for some reason.
@@ -159,7 +157,7 @@ The resulting matrix is __still a linear operator__, which:
 ## Equivariance (wrt to translation)
 __Equivariance__ with respect to translation means that we can swap _translation_ and _correlation_ and get the same result:
 $$𝑇(𝑥) ⋆ 𝐾 = 𝑇(𝑥 ⋆ 𝐾)$$
-It is another form of inductive bias that improves data efficiency with respect to linear layers thanks to weight sharing: we do not need to see _features_ (e.g. edges) _at all locations_ in the _training dataset_ to be able to _learn to detect_ them effectively. 
+It is another form of __inductive bias__ that improves data efficiency with respect to linear layers thanks to weight sharing: we do not need to see _features_ (e.g. edges) _at all locations_ in the _training dataset_ to be able to _learn to detect_ them effectively. 
 Note that correlation is ==__not equivariant__ with respect to rotation or scale==.
 
 ## Multiple input channels

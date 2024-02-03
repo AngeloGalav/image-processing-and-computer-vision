@@ -78,7 +78,7 @@ However, SVD of $𝑹_𝒊$ allows _to find the closest orthonormal matrix to it
 (Compute an initial guess for distortion parameters $𝑘$ and $p$.)
 
 So far, we have neglected lens distortion and calibrated a _pure pinhole model_.
-==The coordinates predicted by the homographies starting from points in the WRFs correspond to the _ideal_ (undistorted) _pixel coordinates_ of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$.== The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
+The coordinates predicted by the homographies starting from points in the WRFs correspond to the _ideal_ (undistorted) _pixel coordinates_ of the chessboard corners $𝑚_{𝑢𝑛𝑑𝑖𝑠𝑡}$. The measured coordinates of the corners in the images are the real (distorted) coordinates $𝑚$.
 
 The Original Zhang's model only takes into account the _radial distortion_, and estimates coefficients $𝑘_1$ , $𝑘_2$ of the radial distortion function:
 ![[radial_dist.png]]
@@ -120,7 +120,7 @@ We get a linear, non-homogeneous system of linear equations $𝑫𝒌 = 𝒅$ in
 Now that we have everything, we now need to refine all the approximations that we have. 
 
 As for homographies, the procedure highlighted so far seeks to minimize an _algebraic error_, without any real physical meaning.
-A more accurate solution can instead be found by a so called __Maximum Likelihood Estimate (MLE)__ aimed at _minimization of the __geometric___ (i.e. reprojection) _error_.
+A more accurate solution can instead be found by __Maximum Likelihood Estimate (MLE)__ aimed at _minimization of the __geometric___ (i.e. reprojection) _error_.
 We use all the values estimated so far as initial guesses. Under the hypothesis of i.i.d. (_independent identically distributed_) noise, the MLE for our models is obtained __by minimization of the error__:
 ![[refinemnet.png]]
 with respect to all the unknown camera parameters, which can be solved again by using an _iterative algorithm_, like the Levenberg-Marquardt algorithm.

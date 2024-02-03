@@ -22,10 +22,11 @@ What can we do?
 
 ### Rectification
 What people do in practice is to convert _epipolar geometry_ to _standard geometry_ (Rectification / Warping / __Homography__)
-- Warp the images as if they were acquired through a standard geometry (horizontal and collinear conjugate epipolar lines) 
+- Warp the images as if they were acquired through a standard geometry (horizontal and collinear conjugate epipolar lines) (epipolar liners aligned and parallel)
 - Compute and _apply to both images_ a _transformation_ (i.e. homography) known as rectification. 
 In this way, the transformation transforms the images as if the image planes were completely aligned. 
 
+This is done so that the would look like if the image planes and the cameras' optical axes were perfectly aligned.
 ### Stereo Correspondence
 Given a point in one image (e.g. L) find that in the other image (R) which is the projection of the same 3D point. Such image points are called __corresponding points__.
 
@@ -68,8 +69,8 @@ Every line has its own point at infiniry.
 - ==All parallel 3D lines will share the same vanishing point==, i.e. they “meet” at their vanishing point in the image (you only need _one line_ to find the vanishing point).  
 - If the 3D lines are parallel _in_ the image plane they will not meet at infinity => they stay parallel.
 
-### Weak perspective
-- It may happen that all the lines are parallel (also) in the image…no (much) perspective distortion 
+### Weak perspective (scaled orthographic projection)
+- It may happen that all the lines are parallel (also) in the image…not (much) perspective distortion 
 - In this case the image formation process can be approximated by a simpler model:
 ![[perspective_example_3.png]]
 
@@ -121,7 +122,7 @@ The image plane is supposed to be on the left of the lens (using the image above
 
 #### Circles of confusion
 - On one hand: choosing the distance of the image plane determines the distance at which scene points appear on focus in the image 
-- On the other hand: to acquire scene points at a certain distance we must set the position of the image plane accordingly: 
+- On the other hand: to acquire scene points at a certain distance we must _set the position of the image plane accordingly_: 
 - Given the chosen position of the image plane, scene points both _in front and behind the focusing plane will result __out-of-focus___, thereby appearing in the image as circles, known as __Circles of Confusion__ or Blur Circles, rather than points 
 - The advantage of lenses is to have a _small exposure time_ for capturing moving objects but we pay in terms of depth of field.
 ![[circles_of_confusion.png]]

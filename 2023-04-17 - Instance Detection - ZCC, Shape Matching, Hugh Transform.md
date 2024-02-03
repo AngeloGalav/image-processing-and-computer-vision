@@ -43,7 +43,7 @@ Are SSD and SAD invariant to intensity changes? No.
 So instead, we may use NCC.
 
 #### NCC 
-[An issue we may encounter is light intensity changes, so we may use _affine intensity changes_. (not sure if this is true though)]
+(An issue we may encounter is light intensity changes, so we may use _affine intensity changes_. (not sure if this is true though))
 
 For this reason, we should use the __Normalised Cross-Correlation__:
 ![[NCC.png]]

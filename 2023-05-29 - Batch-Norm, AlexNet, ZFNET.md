@@ -3,7 +3,7 @@
 #### Internal Covariate Shift
 Problem: even when using ReLUs instead of sigmoids, and when properly initializing all the layers, _deep architectures_ following the pattern presented in the previous slides were very _hard and/or slow to train_. 
 
-One (maybe not correct…) intuition: if we consider the $𝑊_2$, $𝑏_2$ linear classifier in the neural network above, the (distribution of the) __representation vector__ $𝒉$ tries to _classify changes_ at each _training iteration_, because $𝑊_1$ and $𝑏_1$ are updated.
+One (maybe not correct…) intuition: if we consider the $𝑊_2$, $𝑏_2$ linear classifier in the neural network above, the (distribution of the) __representation vector__ $𝒉$ (a.k.a. activation of a layer) tries to _classify changes_ at each _training iteration_, because $𝑊_1$ and $𝑏_1$ are updated.
 
 Moreover, the gradient that $𝑊_2$ and $𝑏_2$ receive was computed to _improve performance_ for the “old” distribution of $𝒉$. This effect becomes worse when multiple layers influence the changes of $𝒉$. 
 
@@ -64,7 +64,7 @@ __Cons__
 ![[bn.png]]
 
 ## Batch Norm for convolutional layers (BatchNorm2D)
-In Batch norm for _convolutional layers_, we normalize along mini-batch and _spatial dimensions_ -> out activation has 4 dimensions:
+In Batch norm for _convolutional layers_, we normalize along _mini-batch_ and _spatial dimensions_ -> out activation has 4 dimensions:
 ![[batch_norm_cnn.png]]
 Why? The idea is to respect how _convolutional layers work_: elements of the same feature map are normalized in the same way.
 This type of normalization is also known as Spatial Batch Norm, BatchNorm2D.

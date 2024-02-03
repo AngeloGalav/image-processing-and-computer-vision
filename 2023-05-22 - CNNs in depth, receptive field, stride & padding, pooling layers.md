@@ -1,5 +1,5 @@
 #### Revision of the last lesson: some interesting stuff 
-We have an idea of [[2023-05-18 - Intro to CNN#Equivariance (wrt to translation)|equivariance]], meaning that a picture of a cat remains a picture of a cat, no matter how it is oriented etc...
+We have an idea of [[2023-05-18 - BoW, Activation Function, CNN#Equivariance (wrt to translation)|equivariance]], meaning that a picture of a cat remains a picture of a cat, no matter how it is oriented etc...
 Equivariance allows us to see features in every possible orientation (for equivariance wrt to rotation).
 However, as we know, correlation is only equivariant to _translation_, and not with respect to rotation or scale.
 
@@ -18,7 +18,7 @@ In the general case, we compute $𝑪_{𝒐𝒖𝒕}$ convolutions between vecto
 - _The number of __output channels__ is equal to the __number of kernels___. 
 
 ##### Non-linearity for CNNs
-We have seen that _convolutional layers_ can be interpreted as a constrained form of _linear layers_, [[2023-05-18 - Intro to CNN#Convolution as matrix multiplication|here]]. 
+We have seen that _convolutional layers_ can be interpreted as a constrained form of _linear layers_, [[2023-05-18 - BoW, Activation Function, CNN#Convolution as matrix multiplication|here]]. 
 Hence, they follow the same rule: to meaningfully compose them, we need to _insert_ __non-linear activation__ __functions__ between them.
 
 ## Relationship between spatial dimensions

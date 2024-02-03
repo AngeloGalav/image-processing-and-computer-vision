@@ -56,11 +56,10 @@ It turns out there are theoretical and practical reasons to prefer a loss that t
 ![[softmax.png]]
 ![[softmax_example.png]]
 
-Should be called “softargmax”, as it is a smooth and differentiable approximation of the one-hot encoding of the 𝒂𝒓𝒈𝒎𝒂𝒙 To implement it reducing numerical issues , it is useful to note that. 
-
+Should be called “softargmax”, as it is a smooth and differentiable approximation of the one-hot encoding of the 𝒂𝒓𝒈𝒎𝒂𝒙.
 Note:
 - $softmax_𝑗(𝑠 + 𝑐) = softmax_𝑗(s)$ (he)
-This can help us with numerical issues related to the explosion of the exponential. 
+This can help us with numerical issues related to the _explosion of the exponential_. 
 In particular, we can compute: $softmax(𝑠 − max_𝑘 𝑠_k$)
 - which is the the softmax of $s$ subtracted of the maximum score. In this way the largest score is 0, while the other all negatives.   
 
@@ -106,13 +105,11 @@ We also have some new possible design choices, such as:
 ### How to compute gradients?
 - __Numerically__, as we just did 
 	- _Slow_ and _approximate_, but _easy_ to implement.
-
 - __Analytically__, by exploiting the rules of calculus and, in particular, the __chain rule__:
 $$
 \dfrac{d}{dx}f(g(x)) = f'(g(x))g'(x)
 $$
-		- _Exact_, but _slow, tedious_, and error prone.
-
+	_Exact_, but _slow, tedious_, and error prone.
 - __Automatically__, by automatic differentiation, e.g. with the _backpropagation algorithm_.
 
 [end]

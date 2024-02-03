@@ -3,7 +3,7 @@
 In CV, there are 3 invariances that we're interested in:
 >- Rotation invariance
 >- Scale invariance
->- Illumaition invariance
+>- Illumination invariance
 
 ## To summarize: Harris Corner Detection
 The Harris corner detection algorithm can thus be summarized as follows: 
@@ -95,16 +95,3 @@ LoG filter extrema locates “blobs”
 - minima = light blobs on dark background
 
 ![[multiscale_feature.png]]
-
-## Difference of Gaussian (DoG)
-Lowe proposes to detect keypoints by seeking for the extrema of the _DoG_ (_Difference of Gaussian_) function across the $(x,y,σ)$ domain:
-![[doggy.png]]
-This approach provides a computationally efficient approximation of Lindeberg’s scale-normalized LOG:
-![[LOG.png]]
-Lowe proves that this is a scaled version of Lindberg. $(k-1)$ is a _constant factor_, it does _not influence extrema location_ => the choice of $k$ is _not critical_.
-
-Both detectors are _rotation invariant_ and find _blob-like features_ (__circularly symmetric filters__).
-
->[!WARNING]
->DoG allows us to find features as _blobs_ in images, which are _extremas_ in the $(x,y,\sigma)$ domain. 
->Also, Blobs are rotation and scale invariant. 
