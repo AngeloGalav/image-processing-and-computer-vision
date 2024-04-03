@@ -79,7 +79,7 @@ $$W(p) = \sum_{q \in s} G_{\sigma_{s}} (d_s(p,q)) G_{\sigma_{r}} (d_r(p,q))$$
 	- They are small because the intensity is different and they are far. 
 
 >[!WARNING]
->A limitation of this filter is that __it cannot filter out Impulse Noise__!
+>A limitation of this filter is that __it may remove details or even edges that are not too defined__!
 ### Non-local Means Filter
 Another well-known non-linear edge preserving smoothing filter. The key idea is that the _similarity among patches_ spread over the image can be _distributed_ to _achieve denoising_.
 ![[non_local_means.png]]

@@ -11,7 +11,7 @@ $n_k(p)$ is independent and identically distributed:
 - The noise is _identically distributed_, and is equivalent to a _Gaussian distribution_ with 0 mean ($N(0, \sigma)$). 
 That's why we call it a __Gaussian noise__.
 
-If we assume that the camera is not moving and that the scene is not changing, I can denoise the picture by taking an _average of the pixels intensity_ in sequent _time frames_ $k$. 
+If we assume that the camera is not moving and that the scene is not changing, I can denoise the picture by taking an _average of the pixels intensity_ in sequent ___time__ frames_ $k$. 
 ![[denoising_formula1.png]]
 Since the noise has a 0-average Gaussian distribution, then the _average_ of $n_k(p)$ _approaches 0_ when increasing N.
 
@@ -28,7 +28,7 @@ __Image Filters__ are image processing operators that compute the _new intensity
 They accomplish a variety of useful image processing functions, such as e.g. denoising and sharpening (edge enhancement). 
 An important _sub-class of filters_ is given by __Linear and Translation-Equivariant__ (__LTE__) operators. 
 
-Signal theory: their _application_ in image processing (of LTE operation) consist in a _2D convolution_ between the input image and the impulse response function (point spread function or kernel) of the LTE operator.
+Signal theory: their _application_ in image processing (of _LTE operation_) consist in a __2D convolution__ between the input image and the impulse response function (point spread function or kernel) of the LTE operator.
 LTE operators are used as feature extractors in CNNs (Convolutional Neural Networks).
 
 ### Linearity and translation-equivariance
@@ -42,8 +42,8 @@ The operator is said to be __translation-equivariant__ iff:
 If the operator is LTE, the output signal is given by the _convolution_ between the input signal and the impulse response (point spread function), $h(x, y) = T\{\delta (x, y)\}$, of the operator:
 ![[formulas_4.png]]
 where: 
-- $\delta$ is the _unit impulse_. 
-- $h$ is _impulse response_.
+- $\delta$ is the __unit impulse__. 
+- $h$ is __impulse response__.
 
 ### Graphical view of convolution
 ![[convolution_example.png]]
@@ -81,7 +81,7 @@ It is worth observing that _correlation is never commutative_, even if $h$ is an
 To recap:
 - Convolution is commutative 
 - Correlation is not commutative.
-- If h is an even function: $i ∗ ℎ = ℎ ∗ i =  h ∘ i$
+- If _h is an __even___ function: $i ∗ ℎ = ℎ ∗ i =  h ∘ i$
 
 >[!FUN FACT]
 _Convolutional Neural Networks_ are actually _Correlational Neural Networks_.
@@ -111,7 +111,7 @@ Border Issue, two main options:
 	- How to pad: zero-padding, replicate (aaaIa..…dIddd), reflect (cbaIabc..…dfgIgfd), reflect_101 (dcblabcd......efghlgfe).
 
 ## Mean Filter
-Mean filtering is the simplest (and fastest) way to denoise an image. It consists in replacing each _pixel intensity_ by the _average intensity_ over a chosen neighbourhood (e.g. 3x3, 5x5, 7x7…).
+Mean filtering is the simplest (and fastest) way to denoise an image. It consists in replacing each _pixel intensity_ by the _average intensity_ over _a chosen neighbourhood_ (e.g. 3x3, 5x5, 7x7…).
 
 ![[meanie.png]]
 
@@ -121,10 +121,3 @@ Mean filtering is the simplest (and fastest) way to denoise an image. It consist
 
 ![[mean_filtering1.png]]
 
------
-Old todos in case I forget something important
-# TODOS
-- find dirac function definition
-- convolution definition
-- modify the convolution image
-- Add point references to practal implementation in discrete convolution

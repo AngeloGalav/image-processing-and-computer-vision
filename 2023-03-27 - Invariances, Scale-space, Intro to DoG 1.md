@@ -32,7 +32,7 @@ Scale invariance is the most important thing, since we want to work with applica
 - Given the chosen size of the detection window, all the points along the border are likely to be classified _as edges_ 
 - Should the object appear smaller in the image, use of the _same window size_ would lead to _detect a corner_ 
 ![[edge2corner.png]]
-The use of a fixed detection window size makes it impossible to _repeatably detect homologous_ features when they appear at _different scales_ in images.
+The use of a _fixed_ detection window size makes it impossible to _repeatably detect homologous_ features when they appear at _different scales_ in images.
 
 An image contains _features at different scales_, i.e. points that stand-out as interesting as long as a proper neighbourhood size is chosen to evaluate the chosen interestingness criterion.
 Detecting all features requires to _analyze_ the image _across the range of scales_ “deemed as relevant”.
@@ -70,7 +70,7 @@ The Gaussian Scale-Space is only a tool to represent the input image at differen
 As features do exist across a range of scales…how _do we establish at which scale_ a feature turns out maximally _interesting_ and should therefore be described? 
 
 This problem consists on __multi-scale feature detection__ and __automatic scale selection__.
-In order to solve it, we must compute suitable _combinations_ of _scale-normalized derivatives_ of the _Gaussian Scale-Space_ (normalized Gaussian derivatives) and find their _extrema_.
+In order to solve it, we must compute suitable _combinations_ of _scale-normalized __derivatives___ of the _Gaussian Scale-Space_ (normalized Gaussian derivatives) and find their _extrema_.
 
 - As we filter more (_higher sigma_), derivatives tends to become _weaker_. To compensate Lindberg proposes to _multiply/normalize_ derivatives by _sigma_ (scale-normalized) 
 

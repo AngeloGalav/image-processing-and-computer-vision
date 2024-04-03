@@ -56,7 +56,7 @@ To work with real images, an edge detector should therefore be _robust to noise_
 
 Pixel of _different colors_ will look _similar_ after filtering because of the _blending_.
 
-- _Smoothing_ and _differentiation_ can be carried out jointly within a single step 
+- _Smoothing_ and _differentiation_ can be carried out jointly __within a single step__
 	- This is achieved by _computing differences_ of _averages_ (rather than averaging the image and then computing differences) 
 	- To try avoiding smoothing across edges the two operations are carried out along _orthogonal directions_.
 
@@ -138,7 +138,7 @@ A straightforward Canny edge detector can be achieved by:
 3. __NMS__ along the gradient direction
 
 #### Why Gaussians & Convolutions?
-We use Gaussians & Convolutions to exploit both [[2023-03-09 - Filters - Gaussian, Median and Bilateral#Deploying Separability|separability]] and the [[2023-03-06 - Convolutions and Correlations#Properties of Convolutions|commutatibility of differentiaiton]] property of convolutions. 
+We use Gaussians & Convolutions to exploit both [[2023-03-09 - Filters - Gaussian, Median and Bilateral 1#Deploying Separability|separability]] and the [[2023-03-06 - Convolutions and Correlations 1#Properties of Convolutions|commutatibility of differentiaiton]] property of convolutions. 
 ![[Gaussian_sep.png]]
 We can use the two partial derivatives to compute the gradient. 
 
@@ -149,7 +149,7 @@ NMS is often followed by _thresholding_ of gradient magnitude to help distinguis
 Edge streaking (narrowing) may occur when magnitude varies along object contours, which also may be caused by a too high threshold. 
 
 To solve this, Canny proposed a “__hysteresis__” thresholding approach relying on a _higher_ ($T_h$) and a _lower_ ($T_l$) threshold.
-- A pixel is taken as an edge if either the gradient magnitude is _higher_ than $T_h$, __OR__ _higher_ than $T_l$ AND the pixel is a _neighbor_ of an already detected edge.
+- A pixel is taken as an edge if either the __gradient magnitude__ is _higher_ than $T_h$, __OR__ _higher_ than $T_l$ AND the pixel is a _neighbor_ of an already detected edge.
 
 Hysteresis thresholding is usually carried out by tracking edge pixels along contours
 ![[hysteresis.png]]

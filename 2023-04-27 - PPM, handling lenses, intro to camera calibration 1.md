@@ -1,7 +1,7 @@
 ## Intrinsic Parameter Matrix
 ![[intrisic_parameter_matrix.png]]
 The part of the matrix highlighted in this picture is called the __intrinsic parameter matrix__, and it is the leftmost part of $P_{int}$. 
-It is usually referred to as $𝑨$ or $𝑲$ and it _models the characteristics of the image sensing device_ (camera). It contains the four parameters that [[2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space#Final, intrinsic parameters|we already introduced]].
+It is usually referred to as $𝑨$ or $𝑲$ and it _models the characteristics of the image sensing device_ (camera). It contains the four parameters that [[2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space 1#Final, intrinsic parameters|we already introduced]].
 - It is always an upper right _triangular matrix_ (it will always have some 0s in the lower left corner).
 A notation that we use is this: $[A|0] = P_{int}$. 
 
@@ -183,7 +183,7 @@ There an would be $H_i$ for _each image_ ($n$).
 
 Stacking $3𝑚$ such equations for the $𝑚$ corners we get a system of equations, but… How do we solve a system of equations in a projective space?
 - In fact, we do not have $=$ signs on our equation, but rather _equivalence signs_, since as we know points in a projective space are equivalent _up to a certain scale_. 
-	- [[2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space#Projective Space|Remember?]]
+	- [[2023-04-20 - 3D to 2D recap, Intrinsic and Extrinsic parameters, projection space 1#Projective Space|Remember?]]
 
 When are two 3D points _equivalent_ in $ℙ^2$?
 ![[two_points_equivalent.png]]

@@ -13,7 +13,7 @@ But, the notation is done like this in order to make it clear that we are in the
 - This is because we're trying to project the image into the _Euclidean space_. 
 
 We can try to improve $H$ by making this distance (between $H_iw_j$ and $m_j$) as short as possible -> We want to minimize $||m_j - H_iw_j||$. 
-- By solving [[2023-04-27 - PPM, handling lenses, intro to camera calibration#Estimating $𝐻_𝑖$ (DLT algorithm)|the linear system of equation]], we are trying to minimize the _algebraic error_, while when we are minimizing $||m_j - H_iw_j||$ we are minimizing the _geometric error_.
+- By solving [[2023-04-27 - PPM, handling lenses, intro to camera calibration 1#Estimating $𝐻_𝑖$ (DLT algorithm)|the linear system of equation]], we are trying to minimize the _algebraic error_, while when we are minimizing $||m_j - H_iw_j||$ we are minimizing the _geometric error_.
 
 ##### In short... (Non-linear refinement)
 Given the initial guess for $𝑯_𝒊$ , we can refine it by a non-linear minimization problem:

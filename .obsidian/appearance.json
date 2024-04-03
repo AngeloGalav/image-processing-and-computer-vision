@@ -3,5 +3,6 @@
   "enabledCssSnippets": [
     "colors",
     "img-grids-floats"
-  ]
+  ],
+  "theme": "obsidian"
 }

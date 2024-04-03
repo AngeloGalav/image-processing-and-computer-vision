@@ -12,6 +12,7 @@ It's very difficult to find patterns on uniform regions, but it is possible to i
 What if we need to find the correspondence between $p_R$ and $p_L$ and the 2 planes are _not aligned_ (meaning, that the _camera/projection plane are not aligned_)? Do we need to search through the whole image for the corresponding point? NO!
 - We can _project __the line__ related to __point___ $p_L$ in the right plane and _search across that line_ (on the plane). This line is also called __epipolar line__. 
 	- The _search space_ of the stereo correspondence problem _is always 1D_! (since we are searching on the line)
+	- Each _point_ in the image plane of one camera _determines a line in space_ that must _intersect_ the corresponding point in the other camera's image plane
 ![[epipolar_line.png]]
 
 Issue: ==this projection can be computed only if the _transformation_ between the two cameras is known== (relative mapping between the two cameras). But:
@@ -22,9 +23,9 @@ What can we do?
 
 ### Rectification
 What people do in practice is to convert _epipolar geometry_ to _standard geometry_ (Rectification / Warping / __Homography__)
-- Warp the images as if they were acquired through a standard geometry (horizontal and collinear conjugate epipolar lines) (epipolar liners aligned and parallel)
-- Compute and _apply to both images_ a _transformation_ (i.e. homography) known as rectification. 
-In this way, the transformation transforms the images as if the image planes were completely aligned. 
+- _Warp_ the images as if they were acquired _through a standard geometry_ (=> __horizontal and collinear conjugate epipolar lines__)
+	- Compute and _apply to both images_ a _transformation_ (i.e. __homography__) known as rectification. 
+In this way, the transformation transforms the images as if the image planes were completely aligned, and we can use stereo matching. 
 
 This is done so that the would look like if the image planes and the cameras' optical axes were perfectly aligned.
 ### Stereo Correspondence
@@ -77,7 +78,7 @@ Every line has its own point at infiniry.
 ![[scaled_orthographic_projection.png]]
 Let’s denote as $[z_0 - \Delta z, z_0 + \Delta z]$ the _range of distances_ of the framed subject. If $\Delta z$ is small compared to $z_0$ we obtain:
 ![[formulas_1.png]]
-- Which means that the perspective scaling factor $(f / z)$ is _approximately constant_ $(f / z_0)$ for _all points of the framed subject_.
+- Which means that the __perspective scaling factor__ $(f / z)$ is _approximately constant_ $(f / z_0)$ for _all points of the framed subject_.
 
 - The above equations define a scaled orthographic projection : $u = sx, \ v =sy$. 
 (ortographic projection + scaling). 

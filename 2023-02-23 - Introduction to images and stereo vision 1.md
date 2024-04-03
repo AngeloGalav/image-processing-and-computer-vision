@@ -38,7 +38,7 @@ Before being able to relate a point in the world to a point on the image plane, 
 ![[planes.png]]
  The coordinates defined on the image plane are the __image reference system__, while the coordinates on the focal plane is the __camera reference system__ (it's called this way since it is somehow attached to my camera, but it is only mathematical obviously).  
 
-- $x, y$ are the coordinates of the CRS, while u,v are IRS coordinates. 
+- $x, y$ are the coordinates of the CRS, while $u,v$ are IRS coordinates. 
 - $(0,0,0)$ is the _pinhole coordinates_, $C$. 
 - They are _parallel_: $u,x$ are horizontal, while $v,y$ are vertical. 
 - The equations to map _scene points_ into their corresponding _image points_ are defined as follows:
@@ -59,9 +59,9 @@ In addition, as we've just seen, it allows to _scale_ the coordinates from the _
 ==Image coordinates are a scaled version of scene coordinates (function of _depth_)==
 - the $f$ can change if we move the image, like what happens when we zoom. 
 
-The __Field of View__ (FOV) gets _bigger_ with a _short focal length_ and the rays are shorter, while if the focal length is larger (and so the FOV is restritcted) the images _are closer_ (and bigger!). 
-- The farther the point the smaller the coordinates (object distant from the camera)
-- The larger the _focal length_, the _bigger_ the object is in the image (and viceversa). 
+The __Field of View__ (FOV):
+- BIG FOV -> SMALL FOCAL LENGTH -> IMAGES ARE FURTHER AWAY (SMALLER)
+- SMALL FOV -> BIG FOCAL LENGTH -> IMAGES APPEAR CLOSER
 ![[fov_example.png]]
 We scale the world inversely with respect to the depth ($z$) -> big depth equals small image.
 

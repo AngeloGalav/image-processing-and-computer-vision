@@ -1,5 +1,5 @@
-## Canny's Edge Detector - 2
-In a situation in which we have a single, strong light source, we have the problem of shadows, which can be confused as edges. So what we do is apply Canny edge detection, and in this way the threshold is recognized correctly.
+7## Canny's Edge Detector - 2
+In a situation in which we have a single, _strong light source_, we have the _problem of shadows_, which can be _confused as edges_. So what we do is apply Canny edge detection, and in this way the threshold is recognized correctly.
 ![[canny_edge_detection.png]]
 ### Zero crossing
 ![[zero-crossing.png]]
@@ -23,7 +23,6 @@ To approximate the calculation, instead, we can use _differences on differences_
 
 It can be shown that the __zero-crossing of the Laplacian__ typically lay close to those of the second derivative along the gradient. Yet, the former differential operator _is much faster to compute_, i.e. just a convolution by a 3x3 kernel, than the latter.
 ![[laplacian_kernel.png]]
-(The kernel is obtain through )
 
 ### Laplacian of Gaussian (LOG) 
 We still have to deal with noise. A robust edge detector should include _a smoothing step_ to _filter out noise_ (especially in case second rather than first order derivatives are deployed). 

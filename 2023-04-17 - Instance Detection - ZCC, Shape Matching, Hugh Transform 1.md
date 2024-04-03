@@ -15,8 +15,6 @@ Typical nuisances to be dealt with are _intensity changes_, _occlusions_ and _cl
 Computational efficiency is a major requirement in most practical applications. 
 
 This problem is characterized by a _limited variability_ as the assumption deals with the appearance of the object being captured by a _single model image_ (i.e. roughly planar objects or no view-point changes) and the pose is typically either a 2D translation or a 2D roto-translation or a similarity. 
-Given the limited variability, the problem can been addressed successfully by _classical computer vision_ techniques, the major applications dealing mainly with the space of industrial vision. 
-Instead, Category-level Object Detection aims at detecting certain kind of object(s) (e.g. cars, pedestrians..) regardless of their appearance and pose. Due to the high-variability, this problem is addressed by machine/deep learning techniques
 
 ## Template Matching
 We have a _template_ (or model image) and a _target image_.
@@ -33,14 +31,13 @@ Everytime you compute a dissimilarity function between a _template_ and _sub-ima
 Both $\tilde I(i,j)$, the window at position $(i, j)$ of the target image having the same size as $T$, as well as $T$ can be thought of as $M·N$-dimensional vectors (flatten).
 - Compute pixel-wise intensities differences using _SSD_.
 
-#### SAD and SSD
-We can use __SSD (Sum of Squared Differences)__ as a simple _dissimilarity function_, in which we are basically computing and then summing the _pixel-wide difference_ w.r.t. each pixel:
+#### SSD and SAD
+We can use __SSD (Sum of Squared Differences)__ as a simple _dissimilarity function_, in which we are summing the _pixel-wide difference_ w.r.t. each pixel:
 ![[ssd_formula.png]]
 
 Another function is the of __Sum of Absolute Differences__:
 ![[sad_difference.png]]
-Are SSD and SAD invariant to intensity changes? No. 
-So instead, we may use NCC.
+==SSD and SAD are NOT invariant to intensity changes==, and thus should only be used when the _brightness of the image is consistent_. So instead, we may use NCC.
 
 #### NCC 
 (An issue we may encounter is light intensity changes, so we may use _affine intensity changes_. (not sure if this is true though))
@@ -50,17 +47,17 @@ For this reason, we should use the __Normalised Cross-Correlation__:
 But, it actually represents the _cosine of the angle between vectors_ $I(i,j)$ e $T$, so it goes $[-1,+1]$. 
 ![[NCC_2.png]]
 NCC is considered a _similarity function_, since $NCC=0$ when both vectors are the same. 
-The NCC is not completely invariant though, since in the formula $I = \alpha I + \beta$, summing $\beta$ changes the direction of the vector. 
+The NCC is _not_ completely invariant though, since in the formula $I = \alpha T + \beta$, summing $\beta$ changes the direction of the vector. 
 - So, _only the linear component_ $\tilde I(i,j) = \alpha \cdot T$ is invariant. (invariacne to linear intensity chagnes)
 
 NCC is also _slower_ since we need to compute a multiplication in the numerator and two operation on the denominator. 
 
 #### Zero-Mean Normalised Cross-Correlation, Correlation Coefficient
 $$
-\micro(\tilde I) =  \dfrac{1}{MN} \sum^{M-1}_{m=0} \sum^{M-1}_{n=0} I(i+m, j+n)
+\micro(\tilde I) =  \dfrac{1}{MN} \sum^{M-1}_{m=0} \sum^{N-1}_{n=0} I(i+m, j+n)
 $$
 $$
-\micro(T) =  \dfrac{1}{MN} \sum^{M-1}_{m=0} \sum^{M-1}_{n=0} T(m,n)
+\micro(T) =  \dfrac{1}{MN} \sum^{M-1}_{m=0} \sum^{N-1}_{n=0} T(m,n)
 $$
 We subtract the mean and compute the ZNCC:
 ![[zncc.png]]
@@ -69,26 +66,20 @@ This is invariant to _affine intensity variation_: $\tilde I(i,j) = \alpha \cdot
 ### Comparison of ZCC under significant intensity changes
 ![[comparison.png]]
 ZNCC turns out to be a similarity function very robust to intensity changes!
-
-
 ## Fast Template Matching
 Template matching may be exceedingly slow whenever the model and/or target images have a large size (i.e. computational complexity is $O(M×N×W×H)$). 
 
 A popular approach is to deploy an _image pyramid_: 
-- Smoothing and sub-sampling 
-	- Typically 1/2 on both sides at each level 
-	- Shrink the image, shrink the template 
+- __Smoothing and sub-sampling__ 
+	- Typically 1/2 on both sides at each level (Shrink both target image and template) 
 - _Full search at top level_ and then _local refinements_ traversing back the pyramid down to the original image
 ![[pyramid.png]]
 Very fast approach, though the _number of levels_ needs to be _chosen carefully_ (and empirically) to avoid loss of information, which negatively affect the detection.
 
 ## Shape-based Matching
-Another istance level object detection that we've seen is __SIFT__, but you cannot detect edges or corners in SIFT.
+Another istance level object detection that we've seen is SIFT, but you cannot detect edges or corners in SIFT.
 
 __Edge-based template matching approach__ 
-We essentially use edges to define a shape, and the edges are then use to detect the shape in the target image. 
-From edges, we can exploit the _orientation_, and add the _orientation information_ to the control points.  
-
 - First, a set of _control points_, $P_k$, is extracted from the _model image_ by an _Edge Detector_ and the _gradient direction_ at each $P_k$ is stored.
 	- The Template composed by _offsets_ and _gradient directions_ 
 	- We don't use the magnitude, since it is very much influenced by the intensity difference. 
@@ -116,7 +107,7 @@ Certain application settings call for _invariance_ to __global inversion of cont
 
 This kind of invariance can be achieved by a slight modification to the similarity function defined previously (global) 
 ![[similarity_2.png]]
-The following function is even more robust due to the ability to withstand __local contrast polarity inversions__ (local)
+The following function is even more robust due to the ability to withstand __local contrast polarity inversions__:
 ![[similarity_3.png]]
 
 ## The Hough Transform

@@ -1,4 +1,4 @@
-5## Diaphragm
+## Diaphragm
 - In theory, when imaging a scene through a thin lens, only the points at a certain distance can be on focus, all the others appear blurred into circles 
 - However, as long as such _circles_ are _smaller than the size of the photosensing elements_, the image will still look on-focus (i.e. the light is collected by a single pixel of the camera sensor)
 If the circle of confusion is contained within a single pixel, the image on that pixel will be sharp (and not blurred). That is not the case if the pixel does not contain the circle of confusion. 

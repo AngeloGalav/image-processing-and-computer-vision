@@ -1,4 +1,3 @@
-
 ## VGG: Deep but regular
 ![[architecture.png]]
 (in this picure, each column with a net represents a variant, i.e. VGG-16 is column D)
@@ -55,7 +54,6 @@ __Stem layers__ aggressively _downsamples inputs_, yet, it brings it down a bit 
 
 ### Inception modules
 The body is a _stack_ of _inception modules_.
-
 #### Naive inception modules
 ![[inception_modules.png]]
 It's made of 4 layers in _parallel_.
